@@ -1,7 +1,7 @@
 import { AlbumModel } from './album.model';
 
 describe('Given AlbumModel', () => {
-    describe('when we instanciate it', () => {
+    describe('when we instantiate it', () => {
         const album = new AlbumModel('', '', '', 1, '', '', 1, false);
         test('then we should have an object of the class', () => {
             expect(album).toBeInstanceOf(AlbumModel);

@@ -32,7 +32,18 @@
             "react-app/jest",
             "plugin:@typescript-eslint/recommended",
             "prettier"
-        ]
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "ecmaVersion": "latest",
+            "sourceType": "module"
+        },
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "rules": {
+            "testing-library/no-render-in-setup": "off"
+        }
     },
     "jest": {
         "coveragePathIgnorePatterns": [
@@ -58,7 +69,7 @@
     },
     "devDependencies": {
         "@types/jest": "^29.2.4",
-        "@types/node": "^18.11.10",
+        "@types/node": "^18.11.11",
         "@typescript-eslint/eslint-plugin": "^5.45.0",
         "@typescript-eslint/parser": "^5.45.0",
         "eslint": "^8.29.0",
