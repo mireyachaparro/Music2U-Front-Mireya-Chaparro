@@ -7,7 +7,7 @@ const initialState: {
     isLogging: boolean;
     user: User | null;
     token: string;
-} = { isLogged: false, isLogging: false, token: '', user: null };
+} = { isLogging: false, isLogged: false, token: '', user: null };
 
 export const userReducer = createReducer(initialState, (builder) => {
     builder.addCase(ac.startLoginAction, (state, action) => action.payload);
