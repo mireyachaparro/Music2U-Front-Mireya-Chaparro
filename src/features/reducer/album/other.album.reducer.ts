@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { Album } from '../../models/album.model';
+import { Album } from '../../models/album/album.model';
 import * as ac from './album.action.creators';
 
 const initialState: {
