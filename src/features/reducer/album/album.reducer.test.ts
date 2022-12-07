@@ -1,5 +1,5 @@
-import { albumReducer } from './reducer';
-import { actionTypes } from './action.types';
+import { albumReducer } from './album.reducer';
+import { actionTypes } from './album.action.types';
 import { Album } from '../models/album.model';
 
 describe('given albumReducer', () => {

@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { Album } from '../models/album.model';
-import * as ac from './action.creators';
+import { Album } from '../../models/album/album.model';
+import * as ac from './album.action.creators';
 
 const initialState: Array<Album> = [];
 

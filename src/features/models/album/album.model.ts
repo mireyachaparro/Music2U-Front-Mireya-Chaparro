@@ -1,4 +1,6 @@
-export type ProtoAlbum = {
+import { User } from '../../models/user/user.model';
+
+export interface ProtoAlbum {
     name: string;
     artist: string;
     image: string;
@@ -7,9 +9,9 @@ export type ProtoAlbum = {
     format: string;
     price: number;
     sold: boolean;
-};
+}
 
-export type Album = {
+export interface Album {
     id: string;
     name: string;
     artist: string;
@@ -19,7 +21,8 @@ export type Album = {
     format: string;
     price: number;
     sold: boolean;
-};
+    owner: User;
+}
 
 export class AlbumModel implements ProtoAlbum {
     constructor(
