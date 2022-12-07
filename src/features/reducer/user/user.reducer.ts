@@ -7,27 +7,34 @@ const initialState: {
     isLogging: boolean;
     user: User | null;
     token: string;
-} = { isLogged: false, isLogging: false, token: '', user: null };
+} = { isLogging: false, isLogged: false, token: '', user: null };
 
 export const userReducer = createReducer(initialState, (builder) => {
-    builder.addCase(ac.startLoginAction, (state, action) => action.payload);
+    builder.addCase(ac.startLoginAction, (state, _action) => ({
+        ...state,
+        isLogging: true,
+    }));
 
-    // builder.addCase(ac.loginAction, (state, action) => action.payload);
+    builder.addCase(ac.loginAction, (state, action) => ({
+        ...state,
+        isLogging: false,
+        isLogged: true,
+        token: action.payload,
+    }));
 
-    // builder.addCase(ac.logoutAction, (state, action) => [
-    //     ...state,
-    //     action.payload,
-    // ]);
+    builder.addCase(ac.logoutAction, (state, _action) => ({ ...state }));
 
-    // builder.addCase(ac.addFavAction, (state, action) =>
-    //     state.map((item) =>
-    //         item.id === action.payload.id ? action.payload : item
-    //     )
-    // );
+    builder.addCase(ac.addFavAction, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: action.payload,
+    }));
 
-    // builder.addCase(ac.deleteFavAction, (state, action) =>
-    //     state.filter((item) => item.id !== action.payload.id)
-    // );
+    builder.addCase(ac.deleteFavAction, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: action.payload,
+    }));
 
     builder.addDefaultCase((state) => state);
 });
