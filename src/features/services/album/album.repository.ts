@@ -3,8 +3,8 @@ import { Repository } from '../repository';
 
 export class AlbumRepository implements Repository<Album> {
     url: string;
-    constructor(url = '') {
-        this.url = url ? url : (process.env.REACT_APP_URL_ALBUM as string);
+    constructor() {
+        this.url = process.env.REACT_APP_URL_ALBUM as string;
     }
 
     getAll(): Promise<Album[]> {

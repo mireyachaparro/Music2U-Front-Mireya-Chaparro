@@ -4,7 +4,7 @@ import { AlbumModel } from '../../models/album/album.model';
 describe('given AlbumRepository', () => {
     let albumRepo: AlbumRepository;
     beforeEach(() => {
-        albumRepo = new AlbumRepository('https://test');
+        albumRepo = new AlbumRepository();
     });
     const mockAlbum = new AlbumModel('', '', '', 1, '', '', 1, false);
     describe('when we use albumRepo.getAll()', () => {
@@ -83,7 +83,7 @@ describe('given AlbumRepository', () => {
             };
             global.fetch = jest.fn().mockResolvedValue(res);
             expect(async () => {
-                await albumRepo.create(mockUpdate);
+                await albumRepo.update(mockUpdate);
             }).rejects.toThrow();
         });
     });
