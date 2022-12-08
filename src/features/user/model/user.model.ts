@@ -1,4 +1,4 @@
-import { Album } from '../../models/album/album.model';
+import { Album } from '../../album/model/album.model';
 
 export interface ProtoUser {
     name: string;

@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createReducer } from '@reduxjs/toolkit';
-import { User } from '../../models/user/user.model';
-import * as ac from '../user/user.action.creators';
+import { User } from '../model/user.model';
+import * as ac from './user.action.creators';
 
 const initialState: {
     isLogged: boolean;
@@ -22,7 +23,7 @@ export const userReducer = createReducer(initialState, (builder) => {
         token: action.payload,
     }));
 
-    builder.addCase(ac.logoutAction, (state, _action) => ({ ...state }));
+    builder.addCase(ac.logoutAction, (_state, _action) => initialState);
 
     builder.addCase(ac.addFavAction, (state, action) => ({
         ...state,

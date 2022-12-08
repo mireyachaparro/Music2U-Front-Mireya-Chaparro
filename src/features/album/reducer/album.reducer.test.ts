@@ -1,6 +1,6 @@
 import { albumReducer } from './album.reducer';
 import { actionTypes } from './album.action.types';
-import { Album } from '../../models/album/album.model';
+import { Album } from '../model/album.model';
 
 describe('given albumReducer', () => {
     const albumMock: Album = {

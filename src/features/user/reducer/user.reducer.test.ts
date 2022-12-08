@@ -1,6 +1,6 @@
-import { User } from '../../models/user/user.model';
+import { User } from '../model/user.model';
 import { actionTypes } from './user.action.types';
-import { albumReducer } from '../album/album.reducer';
+import { albumReducer } from '../../album/reducer/album.reducer';
 import { userReducer } from './user.reducer';
 
 describe('given userReducer', () => {

@@ -1,4 +1,4 @@
-import { User } from '../../models/user/user.model';
+import { User } from '../../user/model/user.model';
 
 export interface ProtoAlbum {
     name: string;
