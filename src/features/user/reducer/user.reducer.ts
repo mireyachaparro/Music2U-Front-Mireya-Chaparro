@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createReducer } from '@reduxjs/toolkit';
 import { User } from '../model/user.model';
 import * as ac from './user.action.creators';
