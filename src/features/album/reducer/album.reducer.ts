@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { Album } from '../../models/album/album.model';
+import { Album } from '../model/album.model';
 import * as ac from './album.action.creators';
 
 const initialState: Array<Album> = [];
@@ -19,7 +19,7 @@ export const albumReducer = createReducer(initialState, (builder) => {
     );
 
     builder.addCase(ac.deleteAction, (state, action) =>
-        state.filter((item) => item.id !== action.payload.id)
+        state.filter((item) => item.id !== action.payload)
     );
 
     builder.addDefaultCase((state) => state);

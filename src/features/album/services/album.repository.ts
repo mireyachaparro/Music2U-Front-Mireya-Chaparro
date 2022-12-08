@@ -1,5 +1,5 @@
-import { Album } from '../../models/album/album.model';
-import { Repository } from '../repository';
+import { Album } from '../model/album.model';
+import { Repository } from './repository';
 
 export class AlbumRepository implements Repository<Album> {
     url: string;

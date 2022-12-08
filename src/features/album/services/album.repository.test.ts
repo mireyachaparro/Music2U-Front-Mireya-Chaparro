@@ -1,5 +1,5 @@
 import { AlbumRepository } from './album.repository';
-import { AlbumModel } from '../../models/album/album.model';
+import { AlbumModel } from '../model/album.model';
 
 describe('given AlbumRepository', () => {
     let albumRepo: AlbumRepository;

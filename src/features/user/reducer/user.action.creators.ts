@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { User } from '../../models/user/user.model';
+import { User } from '../model/user.model';
 import { actionTypes } from './user.action.types';
 
 export const startLoginAction = createAction<void>(actionTypes.startLogin);
