@@ -10,6 +10,7 @@ jest.mock('../../../../features/user/hooks/use.users');
 
 describe('given LoginForm component', () => {
     let formElements: Array<{ role: string; name: string }>;
+
     beforeEach(() => {
         formElements = [
             { role: 'textbox', name: 'Email' },
