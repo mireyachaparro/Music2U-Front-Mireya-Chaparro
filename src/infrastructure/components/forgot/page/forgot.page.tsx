@@ -1,4 +1,4 @@
-import { ForgotForm } from '../form/form';
+import { ForgotForm } from '../form/forgot.form';
 
 function ForgotPage() {
     return (
@@ -10,7 +10,7 @@ function ForgotPage() {
                 alt="logo"
             />
             <p className="page__paragraph">
-                Please enter your email address. You will recobe a link to
+                Please enter your email address. You will receive a link to
                 change a new password.
             </p>
             <ForgotForm></ForgotForm>

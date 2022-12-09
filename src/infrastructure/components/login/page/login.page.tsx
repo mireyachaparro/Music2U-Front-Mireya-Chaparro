@@ -1,4 +1,4 @@
-import { LoginForm } from '../form/form';
+import { LoginForm } from '../form/login.form';
 
 function LoginPage() {
     return (

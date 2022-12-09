@@ -1,18 +1,20 @@
 import { SyntheticEvent, useState } from 'react';
-import { User } from '../../../../features/user/model/user.model';
+import { useUsers } from '../../../../features/user/hooks/use.users';
 
 type formData = {
     email: string;
+    password: string;
 };
 
-export function ForgotForm() {
+export function LoginForm() {
     const initialState: formData = {
         email: '',
+        password: '',
     };
 
     const [formState, setFormState] = useState(initialState);
 
-    // const { handleForgot } = useUsers();
+    const { users, handleLogin } = useUsers();
 
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
@@ -21,29 +23,39 @@ export function ForgotForm() {
 
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        const forgotUser: Partial<User> = {
-            ...formState,
-        };
-
-        // handleLogin(loginForgot);
+        handleLogin(formState);
+        localStorage.setItem('token', users.token);
+        setFormState(initialState);
     };
 
     return (
         <>
             <div className="form">
-                <form /*onSubmit={handleSubmit}*/>
+                <form onSubmit={handleSubmit}>
                     <div className="form__email">
                         <input
                             type="email"
                             name="email"
                             placeholder="Email"
+                            aria-label="Email"
                             value={formState.email}
                             onInput={handleInput}
                             required
                         />
                     </div>
+                    <div className="form__password">
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            aria-label="Password"
+                            value={formState.password}
+                            onInput={handleInput}
+                            required
+                        />
+                    </div>
                     <button type="submit" className="form__button">
-                        SEND
+                        LOGIN
                     </button>
                 </form>
             </div>

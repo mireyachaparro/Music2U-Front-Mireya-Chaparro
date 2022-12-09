@@ -8,14 +8,14 @@ export class AlbumRepository implements Repository<Album> {
     }
 
     getAll(): Promise<Album[]> {
-        return fetch(this.url).then((res) => {
+        return fetch('http://localhost:7700/albums').then((res) => {
             if (res.ok) return res.json();
             throw this.#createError(res);
         });
     }
 
     create(item: Partial<Album>): Promise<Album> {
-        return fetch(this.url, {
+        return fetch(/*this.url*/ 'http://localhost:7700/albums', {
             method: 'POST',
             body: JSON.stringify(item),
             headers: { 'content-type': 'application/json' },

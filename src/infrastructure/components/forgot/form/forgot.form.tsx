@@ -3,18 +3,16 @@ import { User } from '../../../../features/user/model/user.model';
 
 type formData = {
     email: string;
-    password: string;
 };
 
-export function LoginForm() {
+export function ForgotForm() {
     const initialState: formData = {
         email: '',
-        password: '',
     };
 
     const [formState, setFormState] = useState(initialState);
 
-    const { users, handleLogin } = useUsers();
+    // const { handleForgot } = useUsers();
 
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
@@ -23,8 +21,11 @@ export function LoginForm() {
 
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        handleLogin(formState);
-        localStorage.setItem('token', users.token);
+        const forgotUser: Partial<User> = {
+            ...formState,
+        };
+        forgotUser;
+        // handleForgot(forgotUser);
     };
 
     return (
@@ -36,23 +37,14 @@ export function LoginForm() {
                             type="email"
                             name="email"
                             placeholder="Email"
+                            aria-label="Email"
                             value={formState.email}
                             onInput={handleInput}
                             required
                         />
                     </div>
-                    <div className="form__password">
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={formState.password}
-                            onInput={handleInput}
-                            required
-                        />
-                    </div>
                     <button type="submit" className="form__button">
-                        LOGIN
+                        SEND
                     </button>
                 </form>
             </div>

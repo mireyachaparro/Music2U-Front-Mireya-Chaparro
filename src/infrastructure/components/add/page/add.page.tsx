@@ -1,4 +1,4 @@
-import { AddForm } from '../form/form';
+import { AddForm } from '../form/add.form';
 
 function AddPage() {
     return (

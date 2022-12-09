@@ -1,4 +1,4 @@
-import { RegisterForm } from '../form/form';
+import { RegisterForm } from '../form/register.form';
 
 function RegisterPage() {
     return (

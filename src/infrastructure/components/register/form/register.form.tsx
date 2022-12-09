@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
-import { User } from '../../../../features/user/model/user.model';
+import { UserRepository } from '../../../../features/user/services/user.repository';
 
 type formData = {
     name: string;
@@ -11,6 +11,8 @@ type formData = {
 };
 
 export function RegisterForm() {
+    const userRepo = new UserRepository();
+
     const initialState: formData = {
         name: '',
         last_name: '',
@@ -22,31 +24,26 @@ export function RegisterForm() {
 
     const [formState, setFormState] = useState(initialState);
 
-    // const { handleRegister } = useUsers();
-
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const handleSubmit = (ev: SyntheticEvent) => {
+    const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
-        const registerUser: Partial<User> = {
-            ...formState,
-        };
-
-        // handleLogin(registerUser);
+        await userRepo.register(formState);
     };
 
     return (
         <>
             <div className="form">
-                <form /*onSubmit={handleSubmit}*/>
+                <form onSubmit={handleSubmit}>
                     <div className="form__name">
                         <input
                             type="text"
                             name="name"
                             placeholder="Name"
+                            aria-label="Name"
                             value={formState.name}
                             onInput={handleInput}
                             required
@@ -57,6 +54,7 @@ export function RegisterForm() {
                             type="text"
                             name="last_name"
                             placeholder="Last name"
+                            aria-label="Last_name"
                             value={formState.last_name}
                             onInput={handleInput}
                             required
@@ -67,6 +65,7 @@ export function RegisterForm() {
                             type="email"
                             name="email"
                             placeholder="Email"
+                            aria-label="Email"
                             value={formState.email}
                             onInput={handleInput}
                             required
@@ -77,6 +76,7 @@ export function RegisterForm() {
                             type="password"
                             name="password"
                             placeholder="Password"
+                            aria-label="Password"
                             value={formState.password}
                             onInput={handleInput}
                             required
@@ -87,6 +87,7 @@ export function RegisterForm() {
                             type="tel"
                             name="phone"
                             placeholder="Phone"
+                            aria-label="Phone"
                             value={formState.phone}
                             onInput={handleInput}
                             required
@@ -98,6 +99,7 @@ export function RegisterForm() {
                             type="date"
                             name="birthday"
                             placeholder="Birthday"
+                            aria-label="Birthday"
                             value={formState.birthday}
                             onInput={handleInput}
                             required

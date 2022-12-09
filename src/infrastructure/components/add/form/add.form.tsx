@@ -43,6 +43,7 @@ export function AddForm() {
         };
 
         handleAdd(newAlbum);
+        setFormState(initialState);
     };
 
     return (
