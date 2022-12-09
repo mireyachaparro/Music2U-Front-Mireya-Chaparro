@@ -10,7 +10,9 @@ export function VinylItem({ item }: { item: Album }) {
                     alt="Cover"
                     width="100px"
                 />
-                <div>{item.price}</div>
+                <div>
+                    <p>{item.price} €</p>
+                </div>
             </div>
         </li>
     );
