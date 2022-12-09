@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { Album } from '../../../../features/album/model/album.model';
-import { AlbumItem } from '../item/item';
+import { CdItem } from '../item/cd.item';
 
-export function List() {
+export function CdList() {
     const { albums, handleLoad } = useAlbums();
 
     const result = albums.filter((item) => item.format === 'CD');
@@ -16,7 +16,7 @@ export function List() {
         <div className="cd">
             <ul className="cd--list">
                 {result.map((item: Album) => (
-                    <AlbumItem key={item.id} item={item}></AlbumItem>
+                    <CdItem key={item.id} item={item}></CdItem>
                 ))}
             </ul>
         </div>

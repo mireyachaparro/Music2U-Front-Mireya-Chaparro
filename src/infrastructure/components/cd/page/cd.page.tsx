@@ -1,12 +1,12 @@
-import { List } from '../list/list';
+import { CdList } from '../list/cd.list';
 
-function ListPage() {
+function CdPage() {
     return (
         <>
             <h2 className="page__title">CDs</h2>
-            <List></List>
+            <CdList></CdList>
         </>
     );
 }
 
-export default ListPage;
+export default CdPage;

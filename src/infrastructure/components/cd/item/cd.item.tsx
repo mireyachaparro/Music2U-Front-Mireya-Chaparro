@@ -1,6 +1,6 @@
 import { Album } from '../../../../features/album/model/album.model';
 
-export function AlbumItem({ item }: { item: Album }) {
+export function CdItem({ item }: { item: Album }) {
     return (
         <li className="cd--list__item">
             <div className="cd--list__item--details">
