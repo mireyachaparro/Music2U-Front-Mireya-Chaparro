@@ -6,7 +6,8 @@ import { VinylItem } from '../item/vinyl.item';
 export function VinylList() {
     const { albums, handleLoad } = useAlbums();
 
-    const result = albums.filter((item) => item.format === 'Vinyl');
+    const filter = albums.filter((item) => item.format === 'Vinyl');
+    const result = filter.reverse();
 
     useEffect(() => {
         handleLoad();

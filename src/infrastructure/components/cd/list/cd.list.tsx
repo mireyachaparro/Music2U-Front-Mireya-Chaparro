@@ -6,7 +6,8 @@ import { CdItem } from '../item/cd.item';
 export function CdList() {
     const { albums, handleLoad } = useAlbums();
 
-    const result = albums.filter((item) => item.format === 'CD');
+    const filter = albums.filter((item) => item.format === 'CD');
+    const result = filter.reverse();
 
     useEffect(() => {
         handleLoad();
