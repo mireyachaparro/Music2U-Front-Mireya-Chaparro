@@ -1,6 +1,6 @@
 import { VinylList } from '../list/vinyl.list';
 
-function CdPage() {
+function VinylPage() {
     return (
         <>
             <h2 className="page__title">Vinyls</h2>
@@ -9,4 +9,4 @@ function CdPage() {
     );
 }
 
-export default CdPage;
+export default VinylPage;
