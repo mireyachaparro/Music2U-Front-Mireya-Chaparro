@@ -7,7 +7,7 @@ export function CdList() {
     const { albums, handleLoad } = useAlbums();
 
     const filter = albums.filter((item) => item.format === 'CD');
-    const result = filter.reverse();
+    const result = [...filter].reverse();
 
     useEffect(() => {
         handleLoad();
