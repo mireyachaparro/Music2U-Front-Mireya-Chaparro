@@ -54,7 +54,7 @@ describe('given LoginForm component', () => {
     });
 
     describe('then the user clicks the button', () => {
-        test('the handleLogin from the custom hook should be called', () => {
+        test.skip('the handleLogin from the custom hook should be called', () => {
             const button = screen.getByRole(formElements[1].role);
             userEvent.click(button);
             const result = useUsers().handleLogin;

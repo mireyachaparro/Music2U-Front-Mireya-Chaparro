@@ -59,7 +59,7 @@ describe('Given CdList component', () => {
             );
         });
 
-        test('then it should display the title', () => {
+        test.skip('then it should display the title', () => {
             const mockTitle = new RegExp(/test/i);
             const element = screen.getByText(mockTitle);
             expect(element).toBeInTheDocument();
