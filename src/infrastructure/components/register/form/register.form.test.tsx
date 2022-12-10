@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
+//para cuando funcione
 // import { useUsers } from '../../../../features/user/hooks/use.users';
 import { appStore } from '../../../store/store';
 import { RegisterForm } from './register.form';
@@ -49,7 +50,7 @@ describe('given RegisterForm component', () => {
             expect(input).toHaveValue(mockTyped);
         });
     });
-
+    //para cuando funcione
     // describe('then the user clicks the button', () => {
     //     test('the handleAdd from the custom hook should be called', () => {
     //         const button = screen.getByRole(formElements[1].role);

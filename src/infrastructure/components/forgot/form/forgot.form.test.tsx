@@ -51,7 +51,7 @@ describe('given ForgotForm component', () => {
             expect(input).toHaveValue(mockTyped);
         });
     });
-
+    //para cuando funcione
     // describe('then the user clicks the button', () => {
     //     test('the handleAdd from the custom hook should be called', () => {
     //         const button = screen.getByRole(formElements[6].role);

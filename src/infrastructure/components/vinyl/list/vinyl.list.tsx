@@ -7,7 +7,7 @@ export function VinylList() {
     const { albums, handleLoad } = useAlbums();
 
     const filter = albums.filter((item) => item.format === 'Vinyl');
-    const result = filter.reverse();
+    const result = [...filter].reverse();
 
     useEffect(() => {
         handleLoad();

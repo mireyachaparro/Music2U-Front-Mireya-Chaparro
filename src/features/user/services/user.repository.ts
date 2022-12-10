@@ -1,11 +1,13 @@
 import { Album } from '../../album/model/album.model';
 import { User } from '../model/user.model';
 import { Repository } from './repository';
+//esto para las variables de entorno
 // import { REACT_APP_URL_USER } from '../../../config';
 
 export class UserRepository implements Repository<User> {
     url: string;
     constructor() {
+        //esto para las variables de entorno
         // this.url = `${REACT_APP_URL_USER}`;
         this.url = process.env.REACT_APP_URL_USER as string;
     }

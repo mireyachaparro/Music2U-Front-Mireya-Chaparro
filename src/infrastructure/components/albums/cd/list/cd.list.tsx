@@ -7,7 +7,7 @@ export function AlbumsCdList() {
     const { albums, handleLoad } = useAlbums();
 
     const filter = albums.filter((item) => item.format === 'CD');
-    const result = filter.reverse().slice(0, 8);
+    const result = [...filter].reverse().slice(0, 8);
 
     useEffect(() => {
         handleLoad();

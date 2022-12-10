@@ -12,6 +12,7 @@ export function ForgotForm() {
 
     const [formState, setFormState] = useState(initialState);
 
+    //para cuando funcione
     // const { handleForgot } = useUsers();
 
     const handleInput = (ev: SyntheticEvent) => {
@@ -24,7 +25,8 @@ export function ForgotForm() {
         const forgotUser: Partial<User> = {
             ...formState,
         };
-        forgotUser;
+        console.log(forgotUser);
+        //para cuando funcione
         // handleForgot(forgotUser);
     };
 
