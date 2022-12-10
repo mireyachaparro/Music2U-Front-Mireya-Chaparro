@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useUsers } from '../../../features/user/hooks/use.users';
 
 type formData = {
     name: string;
@@ -23,6 +24,7 @@ export function AlbumDetails() {
     };
 
     const [details, setDetails] = useState(initialState);
+    const { handleAddFav, handleDeleteFav } = useUsers();
 
     const { id } = useParams();
 
@@ -39,6 +41,14 @@ export function AlbumDetails() {
     useEffect(() => {
         getAlbumById(id);
     }, [id]);
+
+    const handleAddFavorite = () => {
+        handleAddFav(details);
+    };
+
+    const handleDeleteFavorite = () => {
+        handleDeleteFav(details);
+    };
 
     return (
         <div>
@@ -82,14 +92,27 @@ export function AlbumDetails() {
                 <button type="submit" className="form__button">
                     BUY
                 </button>
-
+                <button
+                    type="submit"
+                    className="form__button"
+                    onClick={handleAddFavorite}
+                >
+                    FAV
+                </button>
+                <button
+                    type="submit"
+                    className="form__button"
+                    onClick={handleDeleteFavorite}
+                >
+                    DELETE FAV
+                </button>
                 {/* a este div ponerle cuadrado 53*53 y fondo gris */}
-                <div>
+                {/* <div>
                     <img
                         src="../../../../../public/assets/heart-empty-black.png"
                         alt="empty-heart"
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     );

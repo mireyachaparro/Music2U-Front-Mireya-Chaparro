@@ -15,11 +15,17 @@ export class AlbumRepository implements Repository<Album> {
     }
 
     create(item: Partial<Album>): Promise<Album> {
-        return fetch(/*this.url*/ 'http://localhost:7700/albums', {
+        return fetch('http://localhost:7700/albums', {
             method: 'POST',
             body: JSON.stringify(item),
-            headers: { 'content-type': 'application/json' },
+            headers: {
+                'Content-type': 'application/json',
+                // Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Authorization:
+                    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTMyYTBiNDU4ZDczN2NiMTkxOTA4NCIsIm5hbWUiOiJhIiwibGFzdF9uYW1lIjoiYSIsImVtYWlsIjoiYUBhIiwiaWF0IjoxNjcwNjk4NjA3fQ.B_arRvaCEk0tOF8b8ArWKDQRf4Q2KMUOgz28Cm7rmBE',
+            },
         }).then((res) => {
+            console.log(res.ok);
             if (res.ok) return res.json();
             throw this.#createError(res);
         });
