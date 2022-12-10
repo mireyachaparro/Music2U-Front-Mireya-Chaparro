@@ -14,7 +14,7 @@ export function LoginForm() {
 
     const [formState, setFormState] = useState(initialState);
 
-    const { users, handleLogin } = useUsers();
+    const { handleLogin } = useUsers();
 
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
