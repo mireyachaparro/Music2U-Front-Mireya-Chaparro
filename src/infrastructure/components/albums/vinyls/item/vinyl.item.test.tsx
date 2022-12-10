@@ -5,7 +5,7 @@ import { AlbumModel } from '../../../../features/album/model/album.model';
 import { albumReducer } from '../../../../features/album/reducer/album.reducer';
 import { rootState, rootStore } from '../../../store/store';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { CdItem } from './vinyl.item';
+import { CdItem } from './cd.item';
 import { userReducer } from '../../../../features/user/reducer/user.reducer';
 
 jest.mock('../../../../features/album/hook/use.albums');

@@ -4,13 +4,12 @@ import { Provider } from 'react-redux';
 import { AlbumModel } from '../../../../features/album/model/album.model';
 import { albumReducer } from '../../../../features/album/reducer/album.reducer';
 import { rootState, rootStore } from '../../../store/store';
-import { MemoryRouter as Router } from 'react-router-dom';
-import { CdItem } from './vinyl.item';
+import { CdList } from './vinyl.list';
 import { userReducer } from '../../../../features/user/reducer/user.reducer';
 
 jest.mock('../../../../features/album/hook/use.albums');
 
-describe('Given CdItem component', () => {
+describe('Given CdList component', () => {
     const preloadedState: rootState = {
         albums: [
             {
@@ -54,33 +53,16 @@ describe('Given CdItem component', () => {
 
     describe('when we render the CD item', () => {
         beforeEach(() => {
-            const mockCD = {
-                ...new AlbumModel('', '', '', 1, '', '', 1, false),
-                id: '1',
-                owner: {
-                    id: '',
-                    name: '',
-                    last_name: '',
-                    email: '',
-                    password: '',
-                    phone: '',
-                    birthday: '',
-                    favorites: [],
-                    possessions: [],
-                },
-            };
-
             render(
                 <Provider store={mockStore}>
-                    <Router>
-                        <CdItem item={mockCD}></CdItem>
-                    </Router>
+                    <CdList></CdList>
                 </Provider>
             );
         });
 
         test('then it should display the title', () => {
-            const element = screen.getByAltText(/cover/i);
+            const mockTitle = new RegExp(/test/i);
+            const element = screen.getByText(mockTitle);
             expect(element).toBeInTheDocument();
         });
     });
