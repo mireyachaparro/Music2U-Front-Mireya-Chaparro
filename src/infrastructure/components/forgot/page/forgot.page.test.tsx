@@ -4,7 +4,7 @@ import { MemoryRouter as Router } from 'react-router-dom';
 import { appStore } from '../../../store/store';
 import ForgotPage from './forgot.page';
 
-describe('Given Add page', () => {
+describe('Given Forgot page', () => {
     describe('When we render the component', () => {
         beforeEach(() => {
             render(

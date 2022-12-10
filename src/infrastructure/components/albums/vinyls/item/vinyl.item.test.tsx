@@ -6,11 +6,11 @@ import { AlbumModel } from '../../../../../features/album/model/album.model';
 import { albumReducer } from '../../../../../features/album/reducer/album.reducer';
 import { userReducer } from '../../../../../features/user/reducer/user.reducer';
 import { rootState, rootStore } from '../../../../store/store';
-import { VinylItem } from '../../../vinyl/item/vinyl.item';
+import { AlbumsVinylItem } from './vinyl.item';
 
 jest.mock('../../../../../features/album/hook/use.albums');
 
-describe('Given CdItem component', () => {
+describe('Given AlbumsVinylItem component', () => {
     const preloadedState: rootState = {
         albums: [
             {
@@ -52,7 +52,7 @@ describe('Given CdItem component', () => {
         preloadedState,
     });
 
-    describe('when we render the CD item', () => {
+    describe('when we render the Vinyl item', () => {
         beforeEach(() => {
             const mockCD = {
                 ...new AlbumModel('', '', '', 1, '', '', 1, false),
@@ -73,13 +73,13 @@ describe('Given CdItem component', () => {
             render(
                 <Provider store={mockStore}>
                     <Router>
-                        <VinylItem item={mockCD}></VinylItem>
+                        <AlbumsVinylItem item={mockCD}></AlbumsVinylItem>
                     </Router>
                 </Provider>
             );
         });
 
-        test('then it should display the title', () => {
+        test('then it should display a target with alt attribute', () => {
             const element = screen.getByAltText(/cover/i);
             expect(element).toBeInTheDocument();
         });

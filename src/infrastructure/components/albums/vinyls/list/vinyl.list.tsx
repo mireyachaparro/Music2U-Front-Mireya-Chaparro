@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAlbums } from '../../../../../features/album/hook/use.albums';
 import { Album } from '../../../../../features/album/model/album.model';
-import { AlbumsVinylItem } from '../item/cd.item';
+import { AlbumsVinylItem } from '../item/vinyl.item';
 
 export function AlbumsVinylList() {
     const { albums, handleLoad } = useAlbums();
