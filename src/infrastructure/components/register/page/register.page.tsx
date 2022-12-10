@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { RegisterForm } from '../form/register.form';
 
 function RegisterPage() {
@@ -10,7 +11,12 @@ function RegisterPage() {
                 alt="logo"
             />
             <RegisterForm></RegisterForm>
-            <p className="page__paragraph">Already have an account? Sign in</p>
+            <p className="page__paragraph">
+                Already have an account?{' '}
+                <span>
+                    <Link to={'/'}>Sign in</Link>
+                </span>
+            </p>
         </>
     );
 }

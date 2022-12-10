@@ -1,4 +1,3 @@
-import { Album } from '../../album/model/album.model';
 import { User } from '../model/user.model';
 import { Repository } from './repository';
 //esto para las variables de entorno
@@ -49,40 +48,42 @@ export class UserRepository implements Repository<User> {
                 if (response.ok) return response.json();
                 throw this.#createError(response);
             })
-            .then((response) => response.token)
+            .then((response) => {
+                localStorage.setItem('token', response.token);
+                return response.token;
+            })
             .catch((error) => {
                 return `${error}`;
             });
     }
 
-    addFav(id: Partial<Album>): Promise<User> {
-        return fetch(`${this.url}/addFavorites/${id}`, {
+    addFav(id: string): Promise<User> {
+        return fetch(`http://localhost:7700/users/addFav/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
-            .then((response) => {
-                if (response.ok) return response.json();
-                throw this.#createError(response);
+            .then((res) => {
+                if (res.ok) return res.json();
+                throw this.#createError(res);
             })
             .catch((error) => `${error}`);
     }
 
-    deleteFav(id: Partial<Album>): Promise<User> {
-        return fetch(`${this.url}/deleteFavorites/${id}`, {
+    deleteFav(id: string): Promise<User> {
+        return fetch(`http://localhost:7700/users/deleteFav/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
-            .then((response) => {
-                if (response.ok) return response.json();
-                throw this.#createError(response);
+            .then((res) => {
+                console.log(res.ok);
+                if (res.ok) return res.json();
+                throw this.#createError(res);
             })
             .catch((error) => `${error}`);
     }

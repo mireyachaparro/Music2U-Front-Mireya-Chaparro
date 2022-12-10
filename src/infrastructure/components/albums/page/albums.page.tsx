@@ -7,7 +7,7 @@ function AlbumsPage() {
             <AlbumsCdList></AlbumsCdList>
             <AlbumsVinylList></AlbumsVinylList>
             <div>
-                <img src="../../../../../public/assets/" alt="add" />
+                <img src="../../../../../public/assets/add.png" alt="add" />
             </div>
         </>
     );

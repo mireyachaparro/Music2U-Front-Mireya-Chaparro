@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import AddPage from '../../add/page/add.page';
 import { LoginForm } from '../form/login.form';
 
 function LoginPage() {
@@ -11,7 +13,13 @@ function LoginPage() {
             />
             <LoginForm></LoginForm>
             <p className="page__paragraph">Forgot your password?</p>
-            <p className="page__paragraph">Don’t have an account? Sign up</p>
+            <p className="page__paragraph">
+                Don’t have an account?
+                <span>
+                    <Link to={'/register/'}>Sign up</Link>
+                </span>
+            </p>
+            <AddPage></AddPage>
         </>
     );
 }
