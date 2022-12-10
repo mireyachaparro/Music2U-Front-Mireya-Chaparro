@@ -79,7 +79,7 @@ describe('Given CdItem component', () => {
             );
         });
 
-        test('then it should display the title', () => {
+        test('then it should display a target with alt attribute', () => {
             const element = screen.getByAltText(/cover/i);
             expect(element).toBeInTheDocument();
         });

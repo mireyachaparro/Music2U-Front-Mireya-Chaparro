@@ -6,7 +6,6 @@ import { albumReducer } from '../../../../features/album/reducer/album.reducer';
 import { rootState, rootStore } from '../../../store/store';
 import { CdList } from './cd.list';
 import { userReducer } from '../../../../features/user/reducer/user.reducer';
-
 jest.mock('../../../../features/album/hook/use.albums');
 
 describe('Given CdList component', () => {

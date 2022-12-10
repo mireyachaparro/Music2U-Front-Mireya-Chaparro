@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { AlbumModel } from '../../../../features/album/model/album.model';
-import { albumReducer } from '../../../../features/album/reducer/album.reducer';
-import { rootState, rootStore } from '../../../store/store';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { CdItem } from './cd.item';
-import { userReducer } from '../../../../features/user/reducer/user.reducer';
+import { AlbumModel } from '../../../../../features/album/model/album.model';
+import { albumReducer } from '../../../../../features/album/reducer/album.reducer';
+import { userReducer } from '../../../../../features/user/reducer/user.reducer';
+import { rootState, rootStore } from '../../../../store/store';
+import { VinylItem } from '../../../vinyl/item/vinyl.item';
 
-jest.mock('../../../../features/album/hook/use.albums');
+jest.mock('../../../../../features/album/hook/use.albums');
 
 describe('Given CdItem component', () => {
     const preloadedState: rootState = {
@@ -73,7 +73,7 @@ describe('Given CdItem component', () => {
             render(
                 <Provider store={mockStore}>
                     <Router>
-                        <CdItem item={mockCD}></CdItem>
+                        <VinylItem item={mockCD}></VinylItem>
                     </Router>
                 </Provider>
             );

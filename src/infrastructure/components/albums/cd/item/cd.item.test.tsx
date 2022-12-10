@@ -1,14 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { AlbumModel } from '../../../../features/album/model/album.model';
-import { albumReducer } from '../../../../features/album/reducer/album.reducer';
-import { rootState, rootStore } from '../../../store/store';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { CdItem } from './cd.item';
-import { userReducer } from '../../../../features/user/reducer/user.reducer';
-
-jest.mock('../../../../features/album/hook/use.albums');
+import { AlbumModel } from '../../../../../features/album/model/album.model';
+import { albumReducer } from '../../../../../features/album/reducer/album.reducer';
+import { userReducer } from '../../../../../features/user/reducer/user.reducer';
+import { rootState, rootStore } from '../../../../store/store';
+import { CdItem } from '../../../cd/item/cd.item';
+jest.mock('../../../../../features/album/hook/use.albums');
 
 describe('Given CdItem component', () => {
     const preloadedState: rootState = {
