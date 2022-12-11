@@ -50,8 +50,9 @@ export function AddForm() {
         <>
             <div className="form">
                 <form onSubmit={handleSubmit}>
-                    <div className="form__name">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="text"
                             name="name"
                             placeholder="Album name"
@@ -61,8 +62,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__image">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="file"
                             name="image"
                             placeholder="Image"
@@ -72,8 +74,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__artist">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="text"
                             name="artist"
                             placeholder="Artist"
@@ -83,8 +86,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__year">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="number"
                             name="year"
                             placeholder="Release year"
@@ -94,8 +98,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__gender">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="text"
                             name="gender"
                             placeholder="Gender"
@@ -105,8 +110,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__format">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="text"
                             name="format"
                             placeholder="Format"
@@ -116,8 +122,9 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="form__price">
+                    <div className="flex justify-between mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="number"
                             name="price"
                             placeholder="Price"
@@ -126,11 +133,13 @@ export function AddForm() {
                             onInput={handleInput}
                             required
                         />
-                        <span>€</span>
+                        <span className="self-center text-lg ">€</span>
                     </div>
-                    <button type="submit" className="form__button">
-                        ADD
-                    </button>
+                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
+                        <button type="submit" className="form__button">
+                            ADD
+                        </button>
+                    </div>
                 </form>
             </div>
         </>

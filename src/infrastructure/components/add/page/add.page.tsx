@@ -3,8 +3,10 @@ import { AddForm } from '../form/add.form';
 function AddPage() {
     return (
         <>
-            <h2 className="page__title">Add an album</h2>
-            <AddForm></AddForm>
+            <div className="h-full p-8 bg-gray-100">
+                <h2 className="text-4xl font-bold page__title">Add an album</h2>
+                <AddForm></AddForm>
+            </div>
         </>
     );
 }
