@@ -46,18 +46,18 @@ export function AlbumDetails() {
         handleAddFav(details);
     };
 
-    const handleDeleteFavorite = () => {
-        handleDeleteFav(details);
-    };
+    // const handleDeleteFavorite = () => {
+    //     handleDeleteFav(details);
+    // };
 
     return (
         <div>
             <div>
-                <h2>{details.name}</h2>
-                <p>{details.artist}</p>
+                <h2 className="mb-4 text-4xl font-bold">{details.name}</h2>
+                <p className="text-base font-medium ">{details.artist}</p>
             </div>
 
-            <div>
+            <div className="flex justify-center my-6">
                 <img
                     src={details.image}
                     alt={details.name + ' cover'}
@@ -66,56 +66,76 @@ export function AlbumDetails() {
             </div>
 
             <div>
-                <p>{details.name}</p>
-                <p>
-                    <span>Artist: </span>
-                    <span>{details.artist}</span>
+                <p className="text-lg font-semibold">{details.name}</p>
+                <p className="my-1">
+                    <span className="text-base font-medium">Artist: </span>
+                    <span className="font-normal text-gray-500">
+                        {details.artist}
+                    </span>
                 </p>
-                <p>
-                    <span> Release year: </span>
-                    <span>{details.year}</span>
+                <p className="my-1">
+                    <span className="text-base font-medium">
+                        {' '}
+                        Release year:{' '}
+                    </span>
+                    <span className="font-normal text-gray-500">
+                        {details.year}
+                    </span>
                 </p>
-                <p>
-                    <span>Gender: </span>
-                    <span>{details.gender}</span>
+                <p className="my-1">
+                    <span className="text-base font-medium">Gender: </span>
+                    <span className="font-normal text-gray-500">
+                        {details.gender}
+                    </span>
                 </p>
-                <p>
-                    <span>Format: </span>
-                    <span>{details.format}</span>
+                <p className="my-1">
+                    <span className="text-base font-medium">Format: </span>
+                    <span className="font-normal text-gray-500">
+                        {details.format}
+                    </span>
                 </p>
             </div>
 
-            <div>
+            <div className="my-10 mb-16">
                 <p>
-                    <span>Price: </span>
-                    <span>{details.price}</span>
+                    <span className="text-xl font-medium">Price: </span>
+                    <span className="text-xl text-gray-500">
+                        {details.price}€
+                    </span>
                 </p>
             </div>
 
-            <div>
-                <button type="submit" className="form__button">
-                    BUY
-                </button>
-                <button
-                    type="submit"
-                    className="form__button"
-                    onClick={handleAddFavorite}
-                >
-                    ADD FAV
-                    {/* <img
+            <div className="flex justify-between">
+                <div className="flex justify-center w-64 text-xl text-white bg-black h-14">
+                    <button type="submit" className="form__button">
+                        BUY
+                    </button>
+                </div>
+                <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
+                    <button
+                        type="submit"
+                        className="form__button"
+                        onClick={handleAddFavorite}
+                    >
+                        A
+                    </button>
+                </div>
+
+                {/* <img
                         src="./assets/heart-empty-black.png"
                         alt="heart empty black"
                     /> */}
-                </button>
+            </div>
+            {/* <div className="flex justify-center text-xl text-black bg-gray-300 w-28 h-14">
                 <button
                     type="submit"
                     className="form__button"
                     onClick={handleDeleteFavorite}
                 >
                     DELETE FAV
-                    {/* <img src="./assets/heart-red.png" alt="heart red" /> */}
+                    <img src="./assets/heart-red.png" alt="heart red" />
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 }
