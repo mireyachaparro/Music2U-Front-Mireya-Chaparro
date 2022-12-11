@@ -3,7 +3,7 @@ import { Album } from '../../../../features/album/model/album.model';
 
 export function VinylItem({ item }: { item: Album }) {
     return (
-        <li className="vinyl--list__item">
+        <li className="mr-2 vinyl--list__item">
             <div className="vinyl--list__item--details">
                 <Link to={'/albums/' + item.id} key={item.id}>
                     <img
@@ -14,7 +14,7 @@ export function VinylItem({ item }: { item: Album }) {
                     />
                 </Link>
                 <div>
-                    <p>{item.price} €</p>
+                    <p className="py-2 text-base font-normal">{item.price} €</p>
                 </div>
             </div>
         </li>

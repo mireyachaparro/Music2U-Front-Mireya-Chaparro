@@ -3,8 +3,10 @@ import { VinylList } from '../list/vinyl.list';
 function VinylPage() {
     return (
         <>
-            <h2 className="page__title">Vinyls</h2>
-            <VinylList></VinylList>
+            <div className="h-full p-8 bg-gray-100">
+                <h2 className="text-4xl font-bold">Vinyls</h2>
+                <VinylList></VinylList>
+            </div>
         </>
     );
 }
