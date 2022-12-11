@@ -38,8 +38,9 @@ export function RegisterForm() {
         <>
             <div className="form">
                 <form onSubmit={handleSubmit}>
-                    <div className="form__name">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="text"
                             name="name"
                             placeholder="Name"
@@ -49,8 +50,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__last_name">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="text"
                             name="last_name"
                             placeholder="Last name"
@@ -60,8 +62,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__email">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="email"
                             name="email"
                             placeholder="Email"
@@ -71,8 +74,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__password">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="password"
                             name="password"
                             placeholder="Password"
@@ -82,8 +86,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__phone">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="tel"
                             name="phone"
                             placeholder="Phone"
@@ -94,8 +99,9 @@ export function RegisterForm() {
                             // minlength="9"
                         />
                     </div>
-                    <div className="form__birthday">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="date"
                             name="birthday"
                             placeholder="Birthday"
@@ -105,9 +111,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <button type="submit" className="form__button">
-                        REGISTER
-                    </button>
+                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
+                        <button type="submit">REGISTER</button>
+                    </div>
                 </form>
             </div>
         </>

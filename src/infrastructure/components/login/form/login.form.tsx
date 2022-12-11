@@ -31,8 +31,9 @@ export function LoginForm() {
         <>
             <div className="form">
                 <form onSubmit={handleSubmit}>
-                    <div className="form__email">
+                    <div className="mb-8 bg-gray-100 border-b border-gray-400 border-solid form__email">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="email"
                             name="email"
                             placeholder="Email"
@@ -42,8 +43,9 @@ export function LoginForm() {
                             required
                         />
                     </div>
-                    <div className="form__password">
+                    <div className="bg-gray-100 border-b border-gray-400 border-solid form__password">
                         <input
+                            className="py-4 text-xl bg-gray-100"
                             type="password"
                             name="password"
                             placeholder="Password"
@@ -53,9 +55,11 @@ export function LoginForm() {
                             required
                         />
                     </div>
-                    <button type="submit" className="form__button">
-                        LOGIN
-                    </button>
+                    <div className="flex justify-center mt-16 mb-8 text-xl text-white bg-black w-80 h-14">
+                        <button type="submit" className="form__button">
+                            LOGIN
+                        </button>
+                    </div>
                 </form>
             </div>
         </>
