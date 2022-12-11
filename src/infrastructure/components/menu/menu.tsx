@@ -4,7 +4,7 @@ export function Menu() {
     const menuOptions = [
         { id: '1', path: 'albums', label: 'Home' },
         { id: '2', path: 'favorites', label: 'Fav' },
-        { id: '3', path: 'albums', label: 'Profile' },
+        { id: '3', path: 'profile', label: 'Profile' },
     ];
     return (
         <nav className="nav">

@@ -10,7 +10,7 @@ const VinylPage = lazy(() => import('../vinyl/page/vinyl.page'));
 const AlbumsPage = lazy(() => import('../albums/page/albums.page'));
 const DetailsPage = lazy(() => import('../details/page/details.page'));
 const FavPage = lazy(() => import('../favorites/page/fav.page'));
-// const ProfilePage = lazy(() => import('../profile/page/profile.page'));
+const ProfilePage = lazy(() => import('../profile/page/fav.page'));
 
 export function AppRoutes() {
     return (
@@ -37,10 +37,10 @@ export function AppRoutes() {
                 <Route path="/cd" element={<CdPage></CdPage>}></Route>
                 <Route path="/vinyl" element={<VinylPage></VinylPage>}></Route>
                 <Route path="/favorites" element={<FavPage></FavPage>}></Route>
-                {/* <Route
+                <Route
                     path="/profile"
                     element={<ProfilePage></ProfilePage>}
-                ></Route> */}
+                ></Route>
                 <Route
                     path="*"
                     element={<h1>No se encontró la ruta</h1>}

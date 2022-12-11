@@ -85,7 +85,7 @@ export function AddForm() {
                     </div>
                     <div className="form__year">
                         <input
-                            type="text"
+                            type="number"
                             name="year"
                             placeholder="Release year"
                             aria-label="Year"

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import AddPage from '../../add/page/add.page';
 import { LoginForm } from '../form/login.form';
 
 function LoginPage() {
@@ -22,7 +21,6 @@ function LoginPage() {
                     <Link to={'/register'}>Sign up</Link>
                 </span>
             </p>
-            <AddPage></AddPage>
         </>
     );
 }
