@@ -15,7 +15,7 @@ export function VinylList() {
 
     return (
         <div className="my-4">
-            <ul className="flex flex-wrap">
+            <ul className="flex flex-wrap justify-between">
                 {result.map((item: Album) => (
                     <VinylItem key={item.id} item={item}></VinylItem>
                 ))}

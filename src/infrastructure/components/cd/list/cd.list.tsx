@@ -15,7 +15,7 @@ export function CdList() {
 
     return (
         <div className="my-4">
-            <ul className="flex flex-wrap cd--list">
+            <ul className="flex flex-wrap justify-between cd--list">
                 {result.map((item: Album) => (
                     <CdItem key={item.id} item={item}></CdItem>
                 ))}
