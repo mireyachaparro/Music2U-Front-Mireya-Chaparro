@@ -24,7 +24,7 @@ export function AlbumDetails() {
     };
 
     const [details, setDetails] = useState(initialState);
-    const { handleAddFav, handleDeleteFav } = useUsers();
+    const { handleAddFav /*, handleDeleteFav*/ } = useUsers();
 
     const { id } = useParams();
 

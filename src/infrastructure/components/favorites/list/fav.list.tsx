@@ -13,7 +13,10 @@ export function FavList() {
                 {(users.user as User).favorites.length > 0 ? (
                     <ul>
                         {(users.user as User).favorites.map((item: Album) => (
-                            <li key={item.id}>
+                            <li
+                                className="flex flex-row items-start justify-between my-6"
+                                key={item.id}
+                            >
                                 <div className="fav--list__item--details">
                                     <Link
                                         to={'/albums/' + item.id}
@@ -32,11 +35,11 @@ export function FavList() {
                                     <p>{item.artist}</p>
                                     <p>{item.price}€</p>
                                 </div>
-                                <div>
+                                <div className="flex self-center justify-center w-5 h-5 text-base text-black bg-gray-300">
                                     <button
                                         onClick={() => handleDeleteFav(item)}
                                     >
-                                        DELETE FAV
+                                        D
                                     </button>
                                 </div>
                             </li>
