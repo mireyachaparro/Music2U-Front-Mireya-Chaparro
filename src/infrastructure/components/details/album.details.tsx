@@ -97,14 +97,17 @@ export function AlbumDetails() {
                     className="form__button"
                     onClick={handleAddFavorite}
                 >
-                    FAV
+                    <img
+                        src="./assets/heart-empty-black.png"
+                        alt="heart empty black"
+                    />
                 </button>
                 <button
                     type="submit"
                     className="form__button"
                     onClick={handleDeleteFavorite}
                 >
-                    DELETE FAV
+                    <img src="./assets/heart-red.png" alt="heart red" />
                 </button>
                 {/* a este div ponerle cuadrado 53*53 y fondo gris */}
                 {/* <div>

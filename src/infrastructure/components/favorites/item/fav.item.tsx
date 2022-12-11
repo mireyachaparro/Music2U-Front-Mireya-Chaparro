@@ -32,7 +32,7 @@ export function FavItem({ item }: { item: Album }) {
                     className="form__button"
                     onClick={handleDeleteFavorite}
                 >
-                    DELETE FAV
+                    <img src="./assets/heart-red.png" alt="heart-red" />
                 </button>
             </div>
         </li>
