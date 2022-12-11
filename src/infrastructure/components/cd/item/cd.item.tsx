@@ -14,7 +14,7 @@ export function CdItem({ item }: { item: Album }) {
                     />
                 </Link>
                 <div>
-                    <p>{item.price} €</p>
+                    <p className="py-2 text-base font-normal">{item.price} €</p>
                 </div>
             </div>
         </li>

@@ -4,7 +4,7 @@ import { RegisterForm } from '../form/register.form';
 function RegisterPage() {
     return (
         <>
-            <div className="h-screen p-8 bg-gray-100">
+            <div className="h-full p-8 bg-gray-100">
                 <h2 className="text-4xl font-bold page__title">
                     Personal Details
                 </h2>

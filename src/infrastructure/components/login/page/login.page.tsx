@@ -4,7 +4,7 @@ import { LoginForm } from '../form/login.form';
 function LoginPage() {
     return (
         <>
-            <div className="h-screen p-8 bg-gray-100">
+            <div className="h-full p-8 bg-gray-100">
                 <h2 className="text-4xl font-bold page__title">Login</h2>
                 <div className="flex justify-center p-8">
                     <img
