@@ -3,8 +3,10 @@ import { CdList } from '../list/cd.list';
 function CdPage() {
     return (
         <>
-            <h2 className="page__title">CDs</h2>
-            <CdList></CdList>
+            <div className="h-screen p-8 bg-gray-100">
+                <h2 className="text-4xl font-bold">CDs</h2>
+                <CdList></CdList>
+            </div>
         </>
     );
 }

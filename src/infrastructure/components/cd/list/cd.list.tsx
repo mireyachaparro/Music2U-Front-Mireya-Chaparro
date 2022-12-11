@@ -14,8 +14,8 @@ export function CdList() {
     }, [handleLoad]);
 
     return (
-        <div className="cd">
-            <ul className="cd--list">
+        <div className="my-4">
+            <ul className="flex flex-wrap cd--list">
                 {result.map((item: Album) => (
                     <CdItem key={item.id} item={item}></CdItem>
                 ))}
