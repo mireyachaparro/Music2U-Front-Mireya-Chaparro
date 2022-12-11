@@ -4,7 +4,9 @@ import { actionTypes } from './user.action.types';
 
 export const startLoginAction = createAction<void>(actionTypes.startLogin);
 
-export const loginAction = createAction<string>(actionTypes.login);
+export const loginAction = createAction<{ user: User; token: string }>(
+    actionTypes.login
+);
 
 export const logoutAction = createAction<void>(actionTypes.logout);
 

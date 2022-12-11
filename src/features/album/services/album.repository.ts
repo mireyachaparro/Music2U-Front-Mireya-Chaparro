@@ -25,7 +25,6 @@ export class AlbumRepository implements Repository<Album> {
                     'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTMyYTBiNDU4ZDczN2NiMTkxOTA4NCIsIm5hbWUiOiJhIiwibGFzdF9uYW1lIjoiYSIsImVtYWlsIjoiYUBhIiwiaWF0IjoxNjcwNjk4NjA3fQ.B_arRvaCEk0tOF8b8ArWKDQRf4Q2KMUOgz28Cm7rmBE',
             },
         }).then((res) => {
-            console.log(res.ok);
             if (res.ok) return res.json();
             throw this.#createError(res);
         });

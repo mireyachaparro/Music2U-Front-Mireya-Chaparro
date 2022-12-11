@@ -58,14 +58,18 @@ export function AlbumDetails() {
             </div>
 
             <div>
-                <img src={details.name} alt={details.name + ' cover'} />
+                <img
+                    src={details.image}
+                    alt={details.name + ' cover'}
+                    width="200px"
+                />
             </div>
 
             <div>
                 <p>{details.name}</p>
                 <p>
                     <span>Artist: </span>
-                    <span>{details.artist}</span>{' '}
+                    <span>{details.artist}</span>
                 </p>
                 <p>
                     <span> Release year: </span>
@@ -97,25 +101,20 @@ export function AlbumDetails() {
                     className="form__button"
                     onClick={handleAddFavorite}
                 >
-                    <img
+                    ADD FAV
+                    {/* <img
                         src="./assets/heart-empty-black.png"
                         alt="heart empty black"
-                    />
+                    /> */}
                 </button>
                 <button
                     type="submit"
                     className="form__button"
                     onClick={handleDeleteFavorite}
                 >
-                    <img src="./assets/heart-red.png" alt="heart red" />
+                    DELETE FAV
+                    {/* <img src="./assets/heart-red.png" alt="heart red" /> */}
                 </button>
-                {/* a este div ponerle cuadrado 53*53 y fondo gris */}
-                {/* <div>
-                    <img
-                        src="./public/assets/heart-empty-black.png"
-                        alt="empty-heart"
-                    />
-                </div> */}
             </div>
         </div>
     );

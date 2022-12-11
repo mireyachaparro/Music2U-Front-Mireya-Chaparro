@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { rootState } from '../../../infrastructure/store/store';
-import { ProtoUser } from '../model/user.model';
+import { ProtoUser, User } from '../model/user.model';
 import { UserRepository } from '../services/user.repository';
 import * as ac from '../reducer/user.action.creators';
 import { Album } from '../../album/model/album.model';
@@ -14,7 +14,9 @@ export const useUsers = () => {
     const handleLogin = (user: Partial<ProtoUser>) => {
         repoUser
             .login(user)
-            .then((token: string) => dispatcher(ac.loginAction(token)))
+            .then((res) => {
+                return dispatcher(ac.loginAction(res));
+            })
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

@@ -20,7 +20,8 @@ export const userReducer = createReducer(initialState, (builder) => {
         ...state,
         isLogging: false,
         isLogged: true,
-        token: action.payload,
+        token: action.payload.token,
+        user: action.payload.user,
     }));
 
     builder.addCase(ac.logoutAction, (_state, _action) => initialState);
