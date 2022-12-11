@@ -5,7 +5,7 @@ export function AlbumsVinylItem({ item }: { item: Album }) {
     return (
         <li className="vinyl--list__item">
             <div className="vinyl--list__item--details">
-                <Link to={'/albums/' + item.id} key={item.id}>
+                <Link to={'/albums' + item.id} key={item.id}>
                     <img
                         className="vinyl--list__item__img"
                         src={item.image}

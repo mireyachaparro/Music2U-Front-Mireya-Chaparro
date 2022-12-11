@@ -8,15 +8,18 @@ function LoginPage() {
             <h2 className="page__title">Login</h2>
             <img
                 className="page__logo"
-                src="public/assets/favicon.png"
+                src="./assets/favicon.png"
                 alt="logo"
+                width="150px"
             />
             <LoginForm></LoginForm>
-            <p className="page__paragraph">Forgot your password?</p>
+            <p>
+                <Link to={'/forgot'}>Forgot your password?</Link>
+            </p>
             <p className="page__paragraph">
                 Don’t have an account?
                 <span>
-                    <Link to={'/register/'}>Sign up</Link>
+                    <Link to={'/register'}>Sign up</Link>
                 </span>
             </p>
             <AddPage></AddPage>

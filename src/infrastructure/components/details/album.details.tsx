@@ -109,7 +109,7 @@ export function AlbumDetails() {
                 {/* a este div ponerle cuadrado 53*53 y fondo gris */}
                 {/* <div>
                     <img
-                        src="../../../../../public/assets/heart-empty-black.png"
+                        src="./public/assets/heart-empty-black.png"
                         alt="empty-heart"
                     />
                 </div> */}

@@ -6,8 +6,9 @@ function ForgotPage() {
             <h2 className="page__title">Forgot password</h2>
             <img
                 className="page__logo"
-                src="public/assets/favicon.png"
+                src="./assets/favicon.png"
                 alt="logo"
+                width="150px"
             />
             <p className="page__paragraph">
                 Please enter your email address. You will receive a link to

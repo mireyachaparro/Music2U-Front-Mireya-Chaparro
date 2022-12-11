@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAlbums } from '../../../../../features/album/hook/use.albums';
 import { Album } from '../../../../../features/album/model/album.model';
 import { AlbumsCdItem } from '../item/cd.item';
@@ -21,7 +22,9 @@ export function AlbumsCdList() {
                     <AlbumsCdItem key={item.id} item={item}></AlbumsCdItem>
                 ))}
             </ul>
-            <p>See more</p>
+            <p>
+                <Link to={'/cd'}>See more</Link>
+            </p>
         </div>
     );
 }

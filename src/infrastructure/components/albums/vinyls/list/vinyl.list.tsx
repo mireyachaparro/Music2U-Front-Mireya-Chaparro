@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAlbums } from '../../../../../features/album/hook/use.albums';
 import { Album } from '../../../../../features/album/model/album.model';
 import { AlbumsVinylItem } from '../item/vinyl.item';
@@ -24,7 +25,7 @@ export function AlbumsVinylList() {
                     ></AlbumsVinylItem>
                 ))}
             </ul>
-            <p>See more</p>
+            <Link to={'/vinyl'}>See more</Link>
         </div>
     );
 }

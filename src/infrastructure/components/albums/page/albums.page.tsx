@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { AlbumsCdList } from '../cd/list/cd.list';
 import { AlbumsVinylList } from '../vinyls/list/vinyl.list';
 
@@ -7,7 +8,9 @@ function AlbumsPage() {
             <AlbumsCdList></AlbumsCdList>
             <AlbumsVinylList></AlbumsVinylList>
             <div>
-                <img src="../../../../../public/assets/add.png" alt="add" />
+                <Link to={'/add'}>
+                    <img src="./assets/add.png" alt="add" width="40px" />
+                </Link>
             </div>
         </>
     );
