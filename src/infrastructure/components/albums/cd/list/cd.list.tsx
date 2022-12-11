@@ -16,13 +16,13 @@ export function AlbumsCdList() {
 
     return (
         <div className="cd">
-            <h2 className="page__title">CDs</h2>
-            <ul className="cd--list">
+            <h2 className="text-4xl font-bold">CDs</h2>
+            <ul className="flex flex-wrap justify-between my-2 cd--list">
                 {result.map((item: Album) => (
                     <AlbumsCdItem key={item.id} item={item}></AlbumsCdItem>
                 ))}
             </ul>
-            <p>
+            <p className="text-base text-gray-500">
                 <Link to={'/cd'}>See more</Link>
             </p>
         </div>

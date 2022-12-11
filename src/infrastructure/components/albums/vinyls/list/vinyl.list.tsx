@@ -15,9 +15,9 @@ export function AlbumsVinylList() {
     }, [handleLoad]);
 
     return (
-        <div className="cd">
-            <h2 className="page__title">Vinyls</h2>
-            <ul className="cd--list">
+        <div className="vinyl">
+            <h2 className="text-4xl font-bold">Vinyls</h2>
+            <ul className="flex flex-wrap justify-between my-2 cd--list">
                 {result.map((item: Album) => (
                     <AlbumsVinylItem
                         key={item.id}
@@ -25,7 +25,9 @@ export function AlbumsVinylList() {
                     ></AlbumsVinylItem>
                 ))}
             </ul>
-            <Link to={'/vinyl'}>See more</Link>
+            <p className="text-base text-gray-500">
+                <Link to={'/vinyl'}>See more</Link>
+            </p>
         </div>
     );
 }
