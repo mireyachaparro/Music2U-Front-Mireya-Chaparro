@@ -20,7 +20,7 @@ export function Menu() {
                         </Link>
                     </li>
                 </div>
-                <div className="flex items-center justify-end ">
+                <div className="absolute right-0 flex items-center justify-end pr-4 ">
                     <li className="px-2 nav__listitem" key={menuOptions[1].id}>
                         <Link to={menuOptions[1].path}>
                             <img

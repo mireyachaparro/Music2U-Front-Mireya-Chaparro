@@ -48,11 +48,11 @@ export function AddForm() {
 
     return (
         <>
-            <div className="form">
+            <div className="px-6 pt-6 form">
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid ">
                         <input
-                            className="py-4 text-xl bg-gray-100"
+                            className="p-4 text-xl bg-gray-100"
                             type="text"
                             name="name"
                             placeholder="Album name"
@@ -62,7 +62,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="file"
@@ -74,7 +74,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="text"
@@ -86,7 +86,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="number"
@@ -98,7 +98,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="text"
@@ -110,7 +110,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="text"
@@ -135,7 +135,7 @@ export function AddForm() {
                         />
                         <span className="self-center text-lg ">€</span>
                     </div>
-                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
+                    <div className="flex justify-center w-full mt-10 text-xl text-white bg-black h-14">
                         <button type="submit" className="form__button">
                             ADD
                         </button>
