@@ -52,8 +52,6 @@ export function AlbumDetails() {
 
     const { users } = useUsers();
 
-    // console.log(users.user?.favorites.some((item) => item.id === id));
-
     return (
         <div>
             <div>
@@ -168,17 +166,6 @@ export function AlbumDetails() {
                     .
                 </p>
             )}
-
-            {/* <div className="flex justify-center text-xl text-black bg-gray-300 w-28 h-14">
-                <button
-                    type="submit"
-                    className="form__button"
-                    onClick={handleDeleteFavorite}
-                >
-                    DELETE FAV
-                    <img src="./assets/heart-red.png" alt="heart red" />
-                </button>
-            </div> */}
         </div>
     );
 }

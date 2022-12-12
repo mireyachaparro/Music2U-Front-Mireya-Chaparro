@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 import { useUsers } from '../../../../features/user/hooks/use.users';
 import { ProfileList } from '../list/profile';
 
@@ -6,12 +7,18 @@ function ProfilePage() {
 
     return (
         <>
-            <div className="h-screen p-8 bg-gray-100">
-                <h2 className="text-4xl font-bold">
-                    {users.user?.name} {users.user?.last_name}
-                </h2>
-                <ProfileList></ProfileList>
-            </div>
+            {users.isLogged ? (
+                <>
+                    <div className="h-screen p-8 bg-gray-100">
+                        <h2 className="text-4xl font-bold">
+                            {users.user?.name} {users.user?.last_name}
+                        </h2>
+                        <ProfileList></ProfileList>
+                    </div>
+                </>
+            ) : (
+                <Navigate to="/"></Navigate>
+            )}
         </>
     );
 }
