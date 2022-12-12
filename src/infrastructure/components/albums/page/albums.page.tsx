@@ -5,7 +5,7 @@ import { AlbumsVinylList } from '../vinyls/list/vinyl.list';
 function AlbumsPage() {
     return (
         <>
-            <div className="h-full p-4 bg-gray-100">
+            <div className="h-screen p-4 bg-gray-100">
                 <AlbumsCdList></AlbumsCdList>
                 <AlbumsVinylList></AlbumsVinylList>
                 <div>
