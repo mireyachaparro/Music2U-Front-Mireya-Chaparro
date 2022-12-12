@@ -10,7 +10,7 @@ const VinylPage = lazy(() => import('../vinyl/page/vinyl.page'));
 const AlbumsPage = lazy(() => import('../albums/page/albums.page'));
 const DetailsPage = lazy(() => import('../details/page/details.page'));
 const FavPage = lazy(() => import('../favorites/page/fav.page'));
-const ProfilePage = lazy(() => import('../profile/page/fav.page'));
+const ProfilePage = lazy(() => import('../profile/page/profile.page'));
 
 export function AppRoutes() {
     return (

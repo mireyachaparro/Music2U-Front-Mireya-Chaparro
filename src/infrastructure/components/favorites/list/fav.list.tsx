@@ -5,8 +5,7 @@ import { User } from '../../../../features/user/model/user.model';
 
 export function FavList() {
     const { users, handleDeleteFav } = useUsers();
-    console.log(users.isLogged);
-    console.log(users.user?.favorites);
+
     return (
         <>
             <div>
@@ -35,11 +34,15 @@ export function FavList() {
                                     <p>{item.artist}</p>
                                     <p>{item.price}€</p>
                                 </div>
-                                <div className="flex self-center justify-center w-5 h-5 text-base text-black bg-gray-300">
+                                <div className="flex self-center justify-center w-5 h-5 text-base text-black ">
                                     <button
                                         onClick={() => handleDeleteFav(item)}
                                     >
-                                        D
+                                        <img
+                                            src="./assets/heart-red.png"
+                                            width="20px"
+                                            alt="heart-red"
+                                        />
                                     </button>
                                 </div>
                             </li>
@@ -47,11 +50,13 @@ export function FavList() {
                     </ul>
                 ) : (
                     <>
-                        <p>Tu lista de favoritos está vacía</p>
-                        <p>
-                            {' '}
+                        <p className="mt-8 mb-2">
+                            Tu lista de favoritos está vacía.
+                        </p>
+                        <p className="font-medium">
                             <Link to={'/albums'}>
-                                Empieza a añadir tus álbumes favoritos.
+                                Haz clic aquí para empezar a añadir tus álbumes
+                                favoritos.
                             </Link>
                         </p>
                     </>

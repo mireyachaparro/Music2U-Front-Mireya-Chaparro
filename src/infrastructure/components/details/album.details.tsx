@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useUsers } from '../../../features/user/hooks/use.users';
 
 type formData = {
@@ -24,7 +24,7 @@ export function AlbumDetails() {
     };
 
     const [details, setDetails] = useState(initialState);
-    const { handleAddFav /*, handleDeleteFav*/ } = useUsers();
+    const { handleAddFav, handleDeleteFav } = useUsers();
 
     const { id } = useParams();
 
@@ -46,9 +46,13 @@ export function AlbumDetails() {
         handleAddFav(details);
     };
 
-    // const handleDeleteFavorite = () => {
-    //     handleDeleteFav(details);
-    // };
+    const handleDeleteFavorite = () => {
+        handleDeleteFav(details);
+    };
+
+    const { users } = useUsers();
+
+    // console.log(users.user?.favorites.some((item) => item.id === id));
 
     return (
         <div>
@@ -105,27 +109,66 @@ export function AlbumDetails() {
                 </p>
             </div>
 
-            <div className="flex justify-between">
-                <div className="flex justify-center w-64 text-xl text-white bg-black h-14">
-                    <button type="submit" className="form__button">
-                        BUY
-                    </button>
-                </div>
-                <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
-                    <button
-                        type="submit"
-                        className="form__button"
-                        onClick={handleAddFavorite}
-                    >
-                        A
-                    </button>
-                </div>
+            {users.isLogged ? (
+                <>
+                    <div className="flex justify-between">
+                        <div className="flex justify-center w-64 text-xl text-white bg-black h-14">
+                            <button type="submit" className="form__button">
+                                BUY
+                            </button>
+                        </div>
 
-                {/* <img
-                        src="./assets/heart-empty-black.png"
-                        alt="heart empty black"
-                    /> */}
-            </div>
+                        {users.user?.favorites.some(
+                            (item) => item.id === id
+                        ) ? (
+                            <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
+                                <button
+                                    type="submit"
+                                    className="form__button"
+                                    onClick={handleDeleteFavorite}
+                                >
+                                    <img
+                                        src="/assets/heart-red.png"
+                                        width="30px"
+                                        alt="heart-red"
+                                    />
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
+                                <button
+                                    type="submit"
+                                    className="form__button"
+                                    onClick={handleAddFavorite}
+                                >
+                                    <img
+                                        src="/assets/heart-empty-black.png"
+                                        width="30px"
+                                        alt="empty-heart"
+                                    />
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </>
+            ) : (
+                <p>
+                    Para comprar el álbum,{' '}
+                    <Link to="/">
+                        <span className="font-medium text-gray-500">
+                            inicia sesión
+                        </span>
+                    </Link>{' '}
+                    o{' '}
+                    <Link to="/register">
+                        <span className="font-medium text-gray-500">
+                            regístrate
+                        </span>
+                    </Link>
+                    .
+                </p>
+            )}
+
             {/* <div className="flex justify-center text-xl text-black bg-gray-300 w-28 h-14">
                 <button
                     type="submit"

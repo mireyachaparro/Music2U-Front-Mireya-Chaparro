@@ -1,12 +1,22 @@
+import { Navigate } from 'react-router-dom';
+import { useUsers } from '../../../../features/user/hooks/use.users';
 import { CdList } from '../list/cd.list';
 
 function CdPage() {
+    const { users } = useUsers();
+
     return (
         <>
-            <div className="h-full p-8 bg-gray-100">
-                <h2 className="text-4xl font-bold">CDs</h2>
-                <CdList></CdList>
-            </div>
+            {users.isLogged ? (
+                <>
+                    <div className="h-full p-8 bg-gray-100">
+                        <h2 className="text-4xl font-bold">CDs</h2>
+                        <CdList></CdList>
+                    </div>
+                </>
+            ) : (
+                <Navigate to="/"></Navigate>
+            )}
         </>
     );
 }

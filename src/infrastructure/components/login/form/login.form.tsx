@@ -1,4 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useUsers } from '../../../../features/user/hooks/use.users';
 
 type formData = {
@@ -16,6 +17,8 @@ export function LoginForm() {
 
     const { handleLogin } = useUsers();
 
+    const navigate = useNavigate();
+
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
         setFormState({ ...formState, [element.name]: element.value });
@@ -25,6 +28,7 @@ export function LoginForm() {
         ev.preventDefault();
         handleLogin(formState);
         setFormState(initialState);
+        navigate('/albums');
     };
 
     return (

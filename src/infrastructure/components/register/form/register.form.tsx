@@ -1,4 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserRepository } from '../../../../features/user/services/user.repository';
 
 type formData = {
@@ -24,6 +25,8 @@ export function RegisterForm() {
 
     const [formState, setFormState] = useState(initialState);
 
+    const navigate = useNavigate();
+
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
         setFormState({ ...formState, [element.name]: element.value });
@@ -32,6 +35,7 @@ export function RegisterForm() {
     const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
         await userRepo.register(formState);
+        navigate('/');
     };
 
     return (
