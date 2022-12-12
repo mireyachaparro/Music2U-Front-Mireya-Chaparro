@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 const LoginPage = lazy(() => import('../login/page/login.page'));
 const RegisterPage = lazy(() => import('../register/page/register.page'));
@@ -46,11 +46,13 @@ export function AppRoutes() {
                     element={
                         <div className="h-screen bg-gray-100 pt-36">
                             <div className="flex justify-center">
-                                <img
-                                    src="/assets/favicon.png"
-                                    alt="logo"
-                                    width="100px"
-                                />
+                                <Link to="/albums">
+                                    <img
+                                        src="/assets/favicon.png"
+                                        alt="logo"
+                                        width="100px"
+                                    />
+                                </Link>
                             </div>
 
                             <h1 className="flex justify-center mt-10 text-3xl">
