@@ -4,14 +4,14 @@ import { RegisterForm } from '../form/register.form';
 function RegisterPage() {
     return (
         <>
-            <div className="h-full p-8 bg-gray-100">
+            <div className="h-full px-8 pt-20 bg-gray-100">
                 <h2 className="text-4xl font-bold page__title">
                     Personal Details
                 </h2>
                 <div className="flex justify-center p-8">
                     <img
                         className="page__logo"
-                        src="/assets/favicon.png"
+                        src="/assets/logo.png"
                         alt="logo"
                         width="150px"
                     />

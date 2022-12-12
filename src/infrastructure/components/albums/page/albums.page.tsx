@@ -5,10 +5,10 @@ import { AlbumsVinylList } from '../vinyls/list/vinyl.list';
 function AlbumsPage() {
     return (
         <>
-            <div className="h-screen p-4 bg-gray-100">
+            <div className="h-screen px-4 pt-10 bg-gray-100">
                 <AlbumsCdList></AlbumsCdList>
                 <AlbumsVinylList></AlbumsVinylList>
-                <div>
+                <div className="absolute bottom-0 right-0 pb-8 pr-4">
                     <Link to={'/add'}>
                         <img src="/assets/add.png" alt="add" width="40px" />
                     </Link>

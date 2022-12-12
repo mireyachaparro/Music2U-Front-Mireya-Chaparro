@@ -110,7 +110,7 @@ export function AlbumDetails() {
             {users.isLogged ? (
                 <>
                     <div className="flex justify-between">
-                        <div className="flex justify-center w-64 text-xl text-white bg-black h-14">
+                        <div className="flex justify-center text-xl text-white bg-black w-72 h-14">
                             <button type="submit" className="form__button">
                                 BUY
                             </button>

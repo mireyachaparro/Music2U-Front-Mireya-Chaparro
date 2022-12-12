@@ -15,7 +15,7 @@ export function AlbumsCdList() {
     }, [handleLoad]);
 
     return (
-        <div className="cd">
+        <div className="mb-8 cd">
             <h2 className="text-4xl font-bold">CDs</h2>
             <ul className="flex flex-wrap justify-between my-2 cd--list">
                 {result.map((item: Album) => (

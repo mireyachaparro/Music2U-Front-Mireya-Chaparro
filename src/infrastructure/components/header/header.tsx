@@ -7,7 +7,7 @@ export function Header() {
         <>
             {users.isLogged ? (
                 <>
-                    <header className="flex flex-row px-2 py-3 bg-gray-300 header">
+                    <header className="flex px-4 py-5 bg-gray-300 shadow-xl drop-shadow header">
                         <Menu></Menu>
                     </header>
                 </>

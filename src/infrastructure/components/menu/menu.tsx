@@ -7,7 +7,7 @@ export function Menu() {
         { id: '3', path: 'profile', label: 'Profile' },
     ];
     return (
-        <nav className="nav ">
+        <nav className="flex nav">
             <ul className="flex nav__list ">
                 <div className="flex items-center ">
                     <li className="px-2 nav__listitem" key={menuOptions[0].id}>
@@ -20,7 +20,7 @@ export function Menu() {
                         </Link>
                     </li>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center justify-end ">
                     <li className="px-2 nav__listitem" key={menuOptions[1].id}>
                         <Link to={menuOptions[1].path}>
                             <img

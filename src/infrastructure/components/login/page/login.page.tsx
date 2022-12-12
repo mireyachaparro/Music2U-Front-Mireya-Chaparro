@@ -4,12 +4,12 @@ import { LoginForm } from '../form/login.form';
 function LoginPage() {
     return (
         <>
-            <div className="h-screen p-8 bg-gray-100">
+            <div className="h-screen px-8 py-20 bg-gray-100">
                 <h2 className="text-4xl font-bold page__title">Login</h2>
                 <div className="flex justify-center p-8">
                     <img
                         className="page__logo"
-                        src="/assets/favicon.png"
+                        src="/assets/logo.png"
                         alt="logo"
                         width="150px"
                     />

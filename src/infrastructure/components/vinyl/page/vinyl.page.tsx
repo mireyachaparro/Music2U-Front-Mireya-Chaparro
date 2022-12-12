@@ -8,7 +8,7 @@ function VinylPage() {
         <>
             {users.isLogged ? (
                 <>
-                    <div className="h-screen p-8 bg-gray-100">
+                    <div className="h-screen px-4 pt-10 bg-gray-100">
                         <h2 className="text-4xl font-bold">Vinyls</h2>
                         <VinylList></VinylList>
                     </div>
