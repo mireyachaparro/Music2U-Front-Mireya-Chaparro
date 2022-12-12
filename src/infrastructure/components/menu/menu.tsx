@@ -13,7 +13,7 @@ export function Menu() {
                     <li className="px-2 nav__listitem" key={menuOptions[0].id}>
                         <Link to={menuOptions[0].path}>
                             <img
-                                src="./assets/favicon.png"
+                                src="/assets/favicon.png"
                                 alt="logo"
                                 width="40px"
                             />
@@ -24,7 +24,7 @@ export function Menu() {
                     <li className="px-2 nav__listitem" key={menuOptions[1].id}>
                         <Link to={menuOptions[1].path}>
                             <img
-                                src="./assets/heart-empty-black.png"
+                                src="/assets/heart-empty-black.png"
                                 alt="heart-empty"
                                 width="35px"
                             />
@@ -33,7 +33,7 @@ export function Menu() {
                     <li className="px-2 nav__listitem" key={menuOptions[2].id}>
                         <Link to={menuOptions[2].path}>
                             <img
-                                src="./assets/profile.png"
+                                src="/assets/profile.png"
                                 alt="profile"
                                 width="45px"
                             />

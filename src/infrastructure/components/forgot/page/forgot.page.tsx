@@ -6,7 +6,7 @@ function ForgotPage() {
             <h2 className="page__title">Forgot password</h2>
             <img
                 className="page__logo"
-                src="./assets/favicon.png"
+                src="/assets/favicon.png"
                 alt="logo"
                 width="150px"
             />

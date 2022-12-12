@@ -11,7 +11,7 @@ function RegisterPage() {
                 <div className="flex justify-center p-8">
                     <img
                         className="page__logo"
-                        src="./assets/favicon.png"
+                        src="/assets/favicon.png"
                         alt="logo"
                         width="150px"
                     />

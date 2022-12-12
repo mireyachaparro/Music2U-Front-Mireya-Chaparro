@@ -45,7 +45,7 @@ export function ProfileList() {
                                         onClick={() => handleDelete(item.id)}
                                     >
                                         <img
-                                            src="./assets/cross.png"
+                                            src="/assets/cross.png"
                                             alt="cross"
                                             width="20px"
                                         />

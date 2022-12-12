@@ -39,7 +39,7 @@ export function FavList() {
                                         onClick={() => handleDeleteFav(item)}
                                     >
                                         <img
-                                            src="./assets/heart-red.png"
+                                            src="/assets/heart-red.png"
                                             width="20px"
                                             alt="heart-red"
                                         />
