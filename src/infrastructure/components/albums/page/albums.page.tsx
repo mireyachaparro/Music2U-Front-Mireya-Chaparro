@@ -10,7 +10,12 @@ function AlbumsPage() {
                 <AlbumsVinylList></AlbumsVinylList>
                 <div className="absolute bottom-0 right-0 pb-8 pr-4">
                     <Link to={'/add'}>
-                        <img src="/assets/add.png" alt="add" width="40px" />
+                        <img
+                            src="/assets/add.png"
+                            alt="add"
+                            width="40px"
+                            height="40px"
+                        />
                     </Link>
                 </div>
             </div>

@@ -9,6 +9,7 @@ function ForgotPage() {
                 src="/assets/favicon.png"
                 alt="logo"
                 width="150px"
+                height="150px"
             />
             <p className="page__paragraph">
                 Please enter your email address. You will receive a link to

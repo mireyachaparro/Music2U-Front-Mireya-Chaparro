@@ -42,8 +42,11 @@ export class AlbumRepository implements Repository<Album> {
     }
 
     delete(id: string): Promise<void> {
-        return fetch(`${this.url}/${id}`, {
+        return fetch(`http://localhost:7700/albums/${id}`, {
             method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
         }).then((res) => {
             if (!res.ok) throw this.#createError(res);
         });

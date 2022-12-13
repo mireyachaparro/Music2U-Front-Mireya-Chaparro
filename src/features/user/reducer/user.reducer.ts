@@ -38,5 +38,14 @@ export const userReducer = createReducer(initialState, (builder) => {
         user: action.payload,
     }));
 
+    builder.addCase(ac.updatePossessionsAction, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: {
+            ...state.user,
+            possessions: [...(state.user as User).possessions, action.payload],
+        } as User,
+    }));
+
     builder.addDefaultCase((state) => state);
 });

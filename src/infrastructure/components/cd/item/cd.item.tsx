@@ -11,6 +11,7 @@ export function CdItem({ item }: { item: Album }) {
                         src={item.image}
                         alt={item.name + ' cover'}
                         width="100px"
+                        height="100px"
                     />
                 </Link>
                 <div>

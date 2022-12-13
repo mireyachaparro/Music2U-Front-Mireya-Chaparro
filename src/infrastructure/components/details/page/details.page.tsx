@@ -1,4 +1,4 @@
-import { AlbumDetails } from '../album.details';
+import { AlbumDetails } from '../details';
 
 function DetailsPage() {
     return (

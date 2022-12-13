@@ -1,19 +1,22 @@
 import { SyntheticEvent } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { Album } from '../../../../features/album/model/album.model';
 import { useUsers } from '../../../../features/user/hooks/use.users';
 import { User } from '../../../../features/user/model/user.model';
+import { logoutAction } from '../../../../features/user/reducer/user.action.creators';
 
 export function ProfileList() {
     const { users } = useUsers();
     const { handleDelete } = useAlbums();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleLogout = async (ev: SyntheticEvent) => {
+    const handleLogout = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        await localStorage.removeItem('token');
-        sessionStorage.removeItem('token');
+        localStorage.removeItem('token');
+        dispatch(logoutAction());
         navigate('/');
     };
 
@@ -37,17 +40,20 @@ export function ProfileList() {
                                             src={item.image}
                                             alt={item.name + ' cover'}
                                             width="100px"
+                                            height="100px"
                                         />
                                     </Link>
                                 </div>
                                 <div className="flex justify-end pt-1">
                                     <button
+                                        aria-label="delete"
                                         onClick={() => handleDelete(item.id)}
                                     >
                                         <img
                                             src="/assets/cross.png"
                                             alt="cross"
                                             width="20px"
+                                            height="20px"
                                         />
                                     </button>
                                 </div>

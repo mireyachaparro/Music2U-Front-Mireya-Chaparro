@@ -12,6 +12,7 @@ function LoginPage() {
                         src="/assets/logo.png"
                         alt="logo"
                         width="150px"
+                        height="150px"
                     />
                 </div>
                 <div className="flex justify-center">

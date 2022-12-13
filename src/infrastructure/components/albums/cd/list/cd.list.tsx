@@ -23,7 +23,7 @@ export function AlbumsCdList() {
                 ))}
             </ul>
             <p className="text-base text-gray-500">
-                <Link to={'/cd'}>See more</Link>
+                <Link to={'/cd'}>See more CDs</Link>
             </p>
         </div>
     );

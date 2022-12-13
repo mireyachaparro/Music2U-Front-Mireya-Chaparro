@@ -26,6 +26,7 @@ export function FavList() {
                                             src={item.image}
                                             alt={item.name + ' cover'}
                                             width="100px"
+                                            height="100px"
                                         />
                                     </Link>
                                 </div>
@@ -38,11 +39,13 @@ export function FavList() {
                                 </div>
                                 <div className="absolute right-0 flex self-center w-5 h-5 mr-4 text-base text-black ">
                                     <button
+                                        aria-label="deleteFav"
                                         onClick={() => handleDeleteFav(item)}
                                     >
                                         <img
                                             src="/assets/heart-red.png"
                                             width="20px"
+                                            height="20px"
                                             alt="heart-red"
                                         />
                                     </button>

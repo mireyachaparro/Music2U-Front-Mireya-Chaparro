@@ -26,7 +26,7 @@ export function AlbumsVinylList() {
                 ))}
             </ul>
             <p className="text-base text-gray-500">
-                <Link to={'/vinyl'}>See more</Link>
+                <Link to={'/vinyl'}>See more vinyls</Link>
             </p>
         </div>
     );

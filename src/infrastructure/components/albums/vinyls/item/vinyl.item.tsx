@@ -11,6 +11,7 @@ export function AlbumsVinylItem({ item }: { item: Album }) {
                         src={item.image}
                         alt={item.name + ' cover'}
                         width="82px"
+                        height="82px"
                     />
                 </Link>
             </div>

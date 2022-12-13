@@ -4,13 +4,15 @@ import { Menu } from './menu';
 
 describe('Given Header component', () => {
     describe('When we render the component', () => {
-        test.skip('Then it should display "Learning redux"', () => {
+        beforeEach(() => {
             render(
                 <Router>
-                    <Menu />
+                    <Menu></Menu>
                 </Router>
             );
-            const element = screen.getByText(/albums/i);
+        });
+        test('then it should display a target with alt attribute', () => {
+            const element = screen.getByAltText(/logo/i);
             expect(element).toBeInTheDocument();
         });
     });

@@ -16,14 +16,12 @@ describe('Given Albums page', () => {
             );
         });
         test('Then it should display the word "CD"', () => {
-            const titleCD = /cd/i;
-            const element = screen.getByText(titleCD);
+            const element = screen.findAllByText(/cds/i);
             expect(element).toBeInTheDocument();
         });
 
         test('Then it should display the word "Vinyl"', () => {
-            const titleCD = /vinyl/i;
-            const element = screen.getByText(titleCD);
+            const element = screen.findAllByText(/vinyls/i);
             expect(element).toBeInTheDocument();
         });
     });

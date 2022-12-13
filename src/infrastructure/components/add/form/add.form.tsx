@@ -39,7 +39,6 @@ export function AddForm() {
     };
 
     const [fileUrl, setFileUrl] = React.useState('');
-    // const [documents, setDocuments] = React.useState<any[]>([]);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleFile = async (ev: any) => {
@@ -62,8 +61,8 @@ export function AddForm() {
     const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
         const collectionRef = app.firestore().collection('files');
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const document = await collectionRef.doc().set({ url: fileUrl });
+
+        await collectionRef.doc().set({ url: fileUrl });
         const newAlbum: ProtoAlbum = {
             ...formState,
             year: +formState.year,
@@ -73,6 +72,7 @@ export function AddForm() {
         };
 
         handleAdd(newAlbum);
+        console.log('pepe');
         setFormState(initialState);
     };
 
@@ -92,7 +92,7 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="flex flex-col mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-4 text-xl bg-gray-100"
                             type="file"

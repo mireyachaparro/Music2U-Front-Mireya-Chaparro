@@ -51,6 +51,7 @@ export function AppRoutes() {
                                         src="/assets/favicon.png"
                                         alt="logo"
                                         width="100px"
+                                        height="100px"
                                     />
                                 </Link>
                             </div>

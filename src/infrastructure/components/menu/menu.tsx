@@ -16,6 +16,7 @@ export function Menu() {
                                 src="/assets/favicon.png"
                                 alt="logo"
                                 width="40px"
+                                height="40px"
                             />
                         </Link>
                     </li>
@@ -27,6 +28,7 @@ export function Menu() {
                                 src="/assets/heart-empty-black.png"
                                 alt="heart-empty"
                                 width="35px"
+                                height="35px"
                             />
                         </Link>
                     </li>
@@ -36,6 +38,7 @@ export function Menu() {
                                 src="/assets/profile.png"
                                 alt="profile"
                                 width="45px"
+                                height="45px"
                             />
                         </Link>
                     </li>

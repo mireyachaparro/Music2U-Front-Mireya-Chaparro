@@ -64,6 +64,7 @@ export function AlbumDetails() {
                     src={details.image}
                     alt={details.name + ' cover'}
                     width="200px"
+                    height="200px"
                 />
             </div>
 
@@ -128,6 +129,7 @@ export function AlbumDetails() {
                                     <img
                                         src="/assets/heart-red.png"
                                         width="30px"
+                                        height="30px"
                                         alt="heart-red"
                                     />
                                 </button>
@@ -137,11 +139,13 @@ export function AlbumDetails() {
                                 <button
                                     type="submit"
                                     className="form__button"
+                                    name="ADD"
                                     onClick={handleAddFavorite}
                                 >
                                     <img
                                         src="/assets/heart-empty-black.png"
                                         width="30px"
+                                        height="30px"
                                         alt="empty-heart"
                                     />
                                 </button>
