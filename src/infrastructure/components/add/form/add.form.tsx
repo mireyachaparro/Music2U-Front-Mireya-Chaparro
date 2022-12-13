@@ -53,6 +53,7 @@ export function AddForm() {
 
     const [formatAlbum, setFormatAlbum] = React.useState('');
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (event: any) => {
         setFormatAlbum(event.target.value);
         console.log(formatAlbum);
