@@ -52,9 +52,9 @@ describe('Given VinylItem component', () => {
         preloadedState,
     });
 
-    describe('when we render the Vinyl item', () => {
+    describe('when we render the vinyl item', () => {
         beforeEach(() => {
-            const mockCD = {
+            const mockVinyl = {
                 ...new AlbumModel('', '', '', 1, '', '', 1, false),
                 id: '1',
                 owner: {
@@ -73,7 +73,7 @@ describe('Given VinylItem component', () => {
             render(
                 <Provider store={mockStore}>
                     <Router>
-                        <VinylItem item={mockCD}></VinylItem>
+                        <VinylItem item={mockVinyl}></VinylItem>
                     </Router>
                 </Provider>
             );

@@ -20,12 +20,9 @@ export class AlbumRepository implements Repository<Album> {
             body: JSON.stringify(item),
             headers: {
                 'Content-type': 'application/json',
-                // Authorization: `Bearer ${localStorage.getItem('token')}`,
-                Authorization:
-                    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTMyYTBiNDU4ZDczN2NiMTkxOTA4NCIsIm5hbWUiOiJhIiwibGFzdF9uYW1lIjoiYSIsImVtYWlsIjoiYUBhIiwiaWF0IjoxNjcwNjk4NjA3fQ.B_arRvaCEk0tOF8b8ArWKDQRf4Q2KMUOgz28Cm7rmBE',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((res) => {
-            console.log(res.ok);
             if (res.ok) return res.json();
             throw this.#createError(res);
         });
@@ -45,8 +42,11 @@ export class AlbumRepository implements Repository<Album> {
     }
 
     delete(id: string): Promise<void> {
-        return fetch(`${this.url}/${id}`, {
+        return fetch(`http://localhost:7700/albums/${id}`, {
             method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
         }).then((res) => {
             if (!res.ok) throw this.#createError(res);
         });

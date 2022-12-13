@@ -20,7 +20,8 @@ export const userReducer = createReducer(initialState, (builder) => {
         ...state,
         isLogging: false,
         isLogged: true,
-        token: action.payload,
+        token: action.payload.token,
+        user: action.payload.user,
     }));
 
     builder.addCase(ac.logoutAction, (_state, _action) => initialState);
@@ -35,6 +36,15 @@ export const userReducer = createReducer(initialState, (builder) => {
         ...state,
         isLogged: true,
         user: action.payload,
+    }));
+
+    builder.addCase(ac.updatePossessionsAction, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: {
+            ...state.user,
+            possessions: [...(state.user as User).possessions, action.payload],
+        } as User,
     }));
 
     builder.addDefaultCase((state) => state);

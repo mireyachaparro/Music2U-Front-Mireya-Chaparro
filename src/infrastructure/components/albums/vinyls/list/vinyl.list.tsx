@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAlbums } from '../../../../../features/album/hook/use.albums';
 import { Album } from '../../../../../features/album/model/album.model';
 import { AlbumsVinylItem } from '../item/vinyl.item';
@@ -14,9 +15,9 @@ export function AlbumsVinylList() {
     }, [handleLoad]);
 
     return (
-        <div className="cd">
-            <h2 className="page__title">Vinyls</h2>
-            <ul className="cd--list">
+        <div className="vinyl">
+            <h2 className="text-4xl font-bold">Vinyls</h2>
+            <ul className="flex flex-wrap justify-between my-2 cd--list">
                 {result.map((item: Album) => (
                     <AlbumsVinylItem
                         key={item.id}
@@ -24,7 +25,9 @@ export function AlbumsVinylList() {
                     ></AlbumsVinylItem>
                 ))}
             </ul>
-            <p>See more</p>
+            <p className="text-base text-gray-500">
+                <Link to={'/vinyl'}>See more vinyls</Link>
+            </p>
         </div>
     );
 }

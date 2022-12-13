@@ -33,7 +33,7 @@ export class UserRepository implements Repository<User> {
             });
     }
 
-    login(item: Partial<User>): Promise<string> {
+    login(item: Partial<User>): Promise<{ user: User; token: string }> {
         return fetch(
             /*`${this.url}/login`*/ 'http://localhost:7700/users/login',
             {
@@ -50,12 +50,36 @@ export class UserRepository implements Repository<User> {
             })
             .then((response) => {
                 localStorage.setItem('token', response.token);
-                return response.token;
+                return response;
             })
             .catch((error) => {
                 return `${error}`;
             });
     }
+
+    // logout(item: User): Promise<User> {
+    //     return fetch(
+    //         /*`${this.url}/login`*/ 'http://localhost:7700/users/login',
+    //         {
+    //             method: 'POST',
+    //             body: JSON.stringify(item),
+    //             headers: {
+    //                 'content-type': 'application/json',
+    //             },
+    //         }
+    //     )
+    //         .then((response) => {
+    //             if (response.ok) return response.json();
+    //             throw this.#createError(response);
+    //         })
+    //         .then((response) => {
+    //             localStorage.setItem('token', response.token);
+    //             return response;
+    //         })
+    //         .catch((error) => {
+    //             return `${error}`;
+    //         });
+    // }
 
     addFav(id: string): Promise<User> {
         return fetch(`http://localhost:7700/users/addFav/${id}`, {
@@ -81,7 +105,6 @@ export class UserRepository implements Repository<User> {
             },
         })
             .then((res) => {
-                console.log(res.ok);
                 if (res.ok) return res.json();
                 throw this.#createError(res);
             })

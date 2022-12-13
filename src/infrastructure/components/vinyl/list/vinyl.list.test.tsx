@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import { AlbumModel } from '../../../../features/album/model/album.model';
 import { albumReducer } from '../../../../features/album/reducer/album.reducer';
 import { rootState, rootStore } from '../../../store/store';
-import { CdList } from './cd.list';
 import { userReducer } from '../../../../features/user/reducer/user.reducer';
+import { VinylList } from './vinyl.list';
 jest.mock('../../../../features/album/hook/use.albums');
 
-describe('Given CdList component', () => {
+describe('Given VinylList component', () => {
     const preloadedState: rootState = {
         albums: [
             {
@@ -54,7 +54,7 @@ describe('Given CdList component', () => {
         beforeEach(() => {
             render(
                 <Provider store={mockStore}>
-                    <CdList></CdList>
+                    <VinylList></VinylList>
                 </Provider>
             );
         });

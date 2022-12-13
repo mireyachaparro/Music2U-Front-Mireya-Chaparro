@@ -1,10 +1,23 @@
+import { Navigate } from 'react-router-dom';
+import { useUsers } from '../../../../features/user/hooks/use.users';
 import { AddForm } from '../form/add.form';
 
 function AddPage() {
+    const { users } = useUsers();
     return (
         <>
-            <h2 className="page__title">Add an album</h2>
-            <AddForm></AddForm>
+            {users.isLogged ? (
+                <>
+                    <div className="h-screen px-4 pt-10 bg-gray-100">
+                        <h2 className="text-4xl font-bold page__title">
+                            Add an album
+                        </h2>
+                        <AddForm></AddForm>
+                    </div>
+                </>
+            ) : (
+                <Navigate to="/"></Navigate>
+            )}
         </>
     );
 }

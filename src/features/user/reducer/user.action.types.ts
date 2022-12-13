@@ -24,4 +24,5 @@ export const actionTypes = {
     // user: User,
     deleteFav: 'users@deleteFav',
     // user: User,
+    updatePossessions: 'users@updatePossessions',
 };

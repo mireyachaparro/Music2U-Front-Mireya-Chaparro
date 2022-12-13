@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { appStore } from '../../../store/store';
 import { AddForm } from './add.form';
@@ -14,9 +15,8 @@ describe('given addForm component', () => {
         formElements = [
             { role: 'textbox', name: 'Name' },
             { role: 'textbox', name: 'Artist' },
-            { role: 'textbox', name: 'Year' },
+            { role: 'spinbutton', name: 'Year' },
             { role: 'textbox', name: 'Gender' },
-            { role: 'textbox', name: 'Format' },
             { role: 'spinbutton', name: 'Price' },
             { role: 'button', name: 'ADD' },
         ];
@@ -33,7 +33,7 @@ describe('given addForm component', () => {
     });
 
     describe('when the form is rendered', () => {
-        test('then it should display a form with 7 inputs and a button', () => {
+        test('then it should display a form with 6 inputs and a button', () => {
             formElements.forEach((item) => {
                 const element: HTMLFormElement = screen.getByRole(item.role, {
                     name: item.name,
@@ -59,10 +59,17 @@ describe('given addForm component', () => {
 
     describe('then the user clicks the button', () => {
         test('the handleAdd from the custom hook should be called', () => {
-            const button = screen.getByRole(formElements[6].role);
-            userEvent.click(button);
-            const result = useAlbums().handleAdd;
-            expect(result).toHaveBeenCalled();
+            const doc = jest.fn(() => ({ set: jest.fn() }));
+            const collection = jest
+                .spyOn(app.firestore(), 'collection')
+                .mockReturnValue({
+                    doc,
+                    collection: jest.fn(),
+                } as unknown as any);
+
+            const button = screen.getAllByRole('button');
+            userEvent.click(button[1]);
+            expect(collection).toHaveBeenCalled();
         });
     });
 });

@@ -14,7 +14,10 @@ export const useUsers = () => {
     const handleLogin = (user: Partial<ProtoUser>) => {
         repoUser
             .login(user)
-            .then((token: string) => dispatcher(ac.loginAction(token)))
+            .then((res) => {
+                console.log(res);
+                dispatcher(ac.loginAction(res));
+            })
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

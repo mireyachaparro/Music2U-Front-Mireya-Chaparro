@@ -3,7 +3,7 @@ import { Album } from '../../../../../features/album/model/album.model';
 
 export function AlbumsCdItem({ item }: { item: Album }) {
     return (
-        <li className="cd--list__item">
+        <li className="my-1 cd--list__item">
             <div className="cd--list__item--details">
                 <Link to={'/albums/' + item.id} key={item.id}>
                     <img
@@ -11,6 +11,7 @@ export function AlbumsCdItem({ item }: { item: Album }) {
                         src={item.image}
                         alt={item.name + ' cover'}
                         width="82px"
+                        height="82px"
                     />
                 </Link>
             </div>

@@ -1,9 +1,11 @@
-import { AlbumDetails } from '../album.details';
+import { AlbumDetails } from '../details';
 
 function DetailsPage() {
     return (
         <>
-            <AlbumDetails></AlbumDetails>;
+            <div className="h-screen px-4 pt-10 bg-gray-100">
+                <AlbumDetails></AlbumDetails>
+            </div>
         </>
     );
 }

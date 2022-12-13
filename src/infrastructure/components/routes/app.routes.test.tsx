@@ -26,8 +26,12 @@ jest.mock('../vinyl/page/vinyl.page', () => {
     return () => <div>Test Vinyl</div>;
 });
 
-jest.mock('../albums/page/albums.page', () => {
-    return () => <div>Test Albums</div>;
+jest.mock('../favorites/page/fav.page', () => {
+    return () => <div>Test Favorites</div>;
+});
+
+jest.mock('../profile/page/profile.page', () => {
+    return () => <div>Test Profile</div>;
 });
 
 describe('Given AppRoutes component', () => {
@@ -41,7 +45,8 @@ describe('Given AppRoutes component', () => {
             '/add',
             '/cd',
             '/vinyl',
-            '/albums',
+            '/favorites',
+            '/profile',
         ];
     });
 
@@ -143,7 +148,7 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is Albums', () => {
+    describe('when we render the component and the route is Favorites', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
@@ -155,7 +160,24 @@ describe('Given AppRoutes component', () => {
         });
 
         test('then it should display the AlbumsPage', async () => {
-            const element = await screen.findByText(/test albums/i);
+            const element = await screen.findByText(/test favorites/i);
+            expect(element).toBeInTheDocument();
+        });
+    });
+
+    describe('when we render the component and the route is Profile', () => {
+        beforeEach(async () => {
+            await act(async () => {
+                render(
+                    <Router initialEntries={paths} initialIndex={7}>
+                        <AppRoutes />
+                    </Router>
+                );
+            });
+        });
+
+        test('then it should display the AlbumsPage', async () => {
+            const element = await screen.findByText(/test profile/i);
             expect(element).toBeInTheDocument();
         });
     });

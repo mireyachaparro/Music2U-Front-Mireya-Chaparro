@@ -1,4 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserRepository } from '../../../../features/user/services/user.repository';
 
 type formData = {
@@ -24,6 +25,8 @@ export function RegisterForm() {
 
     const [formState, setFormState] = useState(initialState);
 
+    const navigate = useNavigate();
+
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
         setFormState({ ...formState, [element.name]: element.value });
@@ -32,14 +35,16 @@ export function RegisterForm() {
     const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
         await userRepo.register(formState);
+        navigate('/');
     };
 
     return (
         <>
             <div className="form">
                 <form onSubmit={handleSubmit}>
-                    <div className="form__name">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="text"
                             name="name"
                             placeholder="Name"
@@ -49,8 +54,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__last_name">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="text"
                             name="last_name"
                             placeholder="Last name"
@@ -60,8 +66,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__email">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="email"
                             name="email"
                             placeholder="Email"
@@ -71,8 +78,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__password">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="password"
                             name="password"
                             placeholder="Password"
@@ -82,20 +90,21 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__phone">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
-                            type="tel"
+                            className="py-2 text-xl bg-gray-100"
+                            type="number"
                             name="phone"
                             placeholder="Phone"
                             aria-label="Phone"
                             value={formState.phone}
                             onInput={handleInput}
                             required
-                            // minlength="9"
                         />
                     </div>
-                    <div className="form__birthday">
+                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
+                            className="py-2 text-xl bg-gray-100"
                             type="date"
                             name="birthday"
                             placeholder="Birthday"
@@ -105,9 +114,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <button type="submit" className="form__button">
-                        REGISTER
-                    </button>
+                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
+                        <button type="submit">REGISTER</button>
+                    </div>
                 </form>
             </div>
         </>
