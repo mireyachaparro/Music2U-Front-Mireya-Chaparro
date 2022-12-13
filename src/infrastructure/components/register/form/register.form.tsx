@@ -93,14 +93,13 @@ export function RegisterForm() {
                     <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
                             className="py-2 text-xl bg-gray-100"
-                            type="tel"
+                            type="number"
                             name="phone"
                             placeholder="Phone"
                             aria-label="Phone"
                             value={formState.phone}
                             onInput={handleInput}
                             required
-                            // minlength="9"
                         />
                     </div>
                     <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">

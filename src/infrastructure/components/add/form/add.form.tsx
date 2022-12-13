@@ -1,4 +1,6 @@
+import React from 'react';
 import { SyntheticEvent, useState } from 'react';
+import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { ProtoAlbum } from '../../../../features/album/model/album.model';
 
@@ -34,12 +36,29 @@ export function AddForm() {
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const handleSubmit = (ev: SyntheticEvent) => {
+    const [fileUrl, setFileUrl] = React.useState('');
+    // const [documents, setDocuments] = React.useState<any[]>([]);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleFile = async (ev: any) => {
+        const file = ev.target.files[0];
+        const storageRef = app.storage().ref();
+        const filePath = storageRef.child(file.name);
+        await filePath.put(file);
+        const linkUrl = await filePath.getDownloadURL();
+        setFileUrl(linkUrl);
+    };
+
+    const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
+        const collectionRef = app.firestore().collection('files');
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const document = await collectionRef.doc().set({ url: fileUrl });
         const newAlbum: ProtoAlbum = {
             ...formState,
             year: +formState.year,
             price: +formState.price,
+            image: fileUrl,
         };
 
         handleAdd(newAlbum);
@@ -70,6 +89,7 @@ export function AddForm() {
                             placeholder="Image"
                             aria-label="Image"
                             value={formState.image}
+                            onChange={handleFile}
                             onInput={handleInput}
                             required
                         />
