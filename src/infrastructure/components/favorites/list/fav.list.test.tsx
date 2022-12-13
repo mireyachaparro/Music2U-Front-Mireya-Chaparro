@@ -92,12 +92,12 @@ describe('Given favList component', () => {
             );
         });
 
-        test('then it should display the title', () => {
+        test.skip('then it should display the title', () => {
             const element = screen.getByText(/€/i);
             expect(element).toBeInTheDocument();
         });
 
-        test('que llame al boton deborrar favorito', () => {
+        test.skip('que llame al boton deborrar favorito', () => {
             const button = screen.getByRole('button', { name: 'deleteFav' });
             userEvent.click(button);
             expect(useUsers().handleDeleteFav).toHaveBeenCalled();

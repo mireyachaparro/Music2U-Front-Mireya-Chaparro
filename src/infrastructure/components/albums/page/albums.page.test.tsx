@@ -16,13 +16,13 @@ describe('Given Albums page', () => {
             );
         });
         test('Then it should display the word "CD"', () => {
-            const element = screen.findAllByText(/cds/i);
-            expect(element).toBeInTheDocument();
+            const element = screen.getAllByText(/cds/i);
+            expect(element[0]).toBeInTheDocument();
         });
 
         test('Then it should display the word "Vinyl"', () => {
-            const element = screen.findAllByText(/vinyls/i);
-            expect(element).toBeInTheDocument();
+            const element = screen.getAllByText(/vinyls/i);
+            expect(element[0]).toBeInTheDocument();
         });
     });
 });
