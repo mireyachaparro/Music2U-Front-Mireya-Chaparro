@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { Album, ProtoAlbum } from '../../album/model/album.model';
+import { ProtoAlbum } from '../../album/model/album.model';
 import { User } from '../model/user.model';
 import { actionTypes } from './user.action.types';
 
