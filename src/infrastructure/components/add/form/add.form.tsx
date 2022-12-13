@@ -3,6 +3,8 @@ import { SyntheticEvent, useState } from 'react';
 import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { ProtoAlbum } from '../../../../features/album/model/album.model';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 type formData = {
     name: string;
@@ -49,6 +51,13 @@ export function AddForm() {
         setFileUrl(linkUrl);
     };
 
+    const [formatAlbum, setFormatAlbum] = React.useState('');
+
+    const handleChange = (event: any) => {
+        setFormatAlbum(event.target.value);
+        console.log(formatAlbum);
+    };
+
     const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
         const collectionRef = app.firestore().collection('files');
@@ -59,6 +68,7 @@ export function AddForm() {
             year: +formState.year,
             price: +formState.price,
             image: fileUrl,
+            format: formatAlbum,
         };
 
         handleAdd(newAlbum);
@@ -130,17 +140,22 @@ export function AddForm() {
                             required
                         />
                     </div>
-                    <div className="mb-2 bg-gray-100 border-b border-gray-400 border-solid">
-                        <input
-                            className="py-4 text-xl bg-gray-100"
-                            type="text"
+                    <div className="flex mb-2 bg-gray-100 border-b border-gray-400 border-solid ">
+                        <p className="py-4 mr-10 text-xl text-gray-400 bg-gray-10">
+                            Format
+                        </p>
+                        <Select
+                            className="flex self-center h-8 "
                             name="format"
-                            placeholder="Format"
-                            aria-label="Format"
-                            value={formState.format}
-                            onInput={handleInput}
                             required
-                        />
+                            value={formatAlbum}
+                            onChange={handleChange}
+                            autoWidth
+                            label="Format"
+                        >
+                            <MenuItem value={'CD'}>CD</MenuItem>
+                            <MenuItem value={'Vinyl'}>Vinyl</MenuItem>
+                        </Select>
                     </div>
                     <div className="flex justify-between mb-4 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
