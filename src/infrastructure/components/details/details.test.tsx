@@ -61,19 +61,11 @@ describe('Given AlbumDetails page', () => {
                 users: { user: { isLogged: true } },
             });
             render(
-                // <Provider store={appStore}>
-                //     <Router>
-                //         <AlbumDetails />
-                //     </Router>
-                // </Provider>
                 <Router>
                     <Provider store={mockStore}>
                         <AlbumDetails></AlbumDetails>
                     </Provider>
                 </Router>
-                // <Provider store={mockStore}>
-                //     <AlbumDetails></AlbumDetails>
-                // </Provider>
             );
         });
         test('Then it should display the word "artist"', () => {

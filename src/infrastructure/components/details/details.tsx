@@ -29,10 +29,7 @@ export function AlbumDetails() {
     const { id } = useParams();
 
     const getAlbumById = async (id: string | undefined) => {
-        const album = await fetch(
-            // `https://mireya-chaparro-back-final-project.onrender.com/albums/${id}`
-            `http://localhost:7700/albums/${id}`
-        )
+        const album = await fetch(`http://localhost:7700/albums/${id}`)
             .then((data) => data.json())
             .then((resp) => resp.album);
         setDetails(album);

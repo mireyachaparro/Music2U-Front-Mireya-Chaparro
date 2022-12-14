@@ -55,7 +55,6 @@ export function AddForm() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (event: any) => {
         setFormatAlbum(event.target.value);
-        console.log(formatAlbum);
     };
 
     const handleSubmit = async (ev: SyntheticEvent) => {
@@ -72,7 +71,6 @@ export function AddForm() {
         };
 
         handleAdd(newAlbum);
-        console.log('pepe');
         setFormState(initialState);
     };
 

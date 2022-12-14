@@ -8,6 +8,8 @@ type formData = {
 };
 
 export function LoginForm() {
+    const [errorLogin, setErrorLogin] = useState(false);
+
     const initialState: formData = {
         email: '',
         password: '',
@@ -27,6 +29,10 @@ export function LoginForm() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
         handleLogin(formState);
+        if (!localStorage.getItem('token')) {
+            setErrorLogin(true);
+            return;
+        }
         setFormState(initialState);
         navigate('/albums');
     };
@@ -34,6 +40,15 @@ export function LoginForm() {
     return (
         <>
             <div className="form">
+                {errorLogin ? (
+                    <>
+                        <div className="flex justify-center py-2 bg-red-600">
+                            Usuario o contraseña incorrectos
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-8 bg-gray-100 border-b border-gray-400 border-solid form__email">
                         <input
