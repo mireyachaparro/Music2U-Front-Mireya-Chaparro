@@ -10,10 +10,6 @@ jest.mock('../register/page/register.page', () => {
     return () => <div>Test Register</div>;
 });
 
-jest.mock('../forgot/page/forgot.page', () => {
-    return () => <div>Test Forgot</div>;
-});
-
 jest.mock('../add/page/add.page', () => {
     return () => <div>Test Add</div>;
 });
@@ -34,6 +30,10 @@ jest.mock('../profile/page/profile.page', () => {
     return () => <div>Test Profile</div>;
 });
 
+jest.mock('../albums/page/albums.page', () => {
+    return () => <div>Test albums</div>;
+});
+
 describe('Given AppRoutes component', () => {
     let paths: Array<string>;
 
@@ -41,12 +41,12 @@ describe('Given AppRoutes component', () => {
         paths = [
             '/',
             '/register',
-            '/forgot',
             '/add',
             '/cd',
             '/vinyl',
             '/favorites',
             '/profile',
+            '/albums',
         ];
     });
 
@@ -80,28 +80,11 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is forgot', () => {
-        beforeEach(async () => {
-            await act(async () => {
-                render(
-                    <Router initialEntries={paths} initialIndex={2}>
-                        <AppRoutes />
-                    </Router>
-                );
-            });
-        });
-
-        test('then it should display the ForgotPage', async () => {
-            const element = await screen.findByText(/test forgot/i);
-            expect(element).toBeInTheDocument();
-        });
-    });
-
     describe('when we render the component and the route is add', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
-                    <Router initialEntries={paths} initialIndex={3}>
+                    <Router initialEntries={paths} initialIndex={2}>
                         <AppRoutes />
                     </Router>
                 );
@@ -114,18 +97,18 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is CD', () => {
+    describe('when we render the component and the route is cd', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
-                    <Router initialEntries={paths} initialIndex={4}>
+                    <Router initialEntries={paths} initialIndex={3}>
                         <AppRoutes />
                     </Router>
                 );
             });
         });
 
-        test('then it should display the CDPage', async () => {
+        test('then it should display the CdPage', async () => {
             const element = await screen.findByText(/test cd/i);
             expect(element).toBeInTheDocument();
         });
@@ -135,7 +118,7 @@ describe('Given AppRoutes component', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
-                    <Router initialEntries={paths} initialIndex={5}>
+                    <Router initialEntries={paths} initialIndex={4}>
                         <AppRoutes />
                     </Router>
                 );
@@ -148,7 +131,24 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is Favorites', () => {
+    describe('when we render the component and the route is favorites', () => {
+        beforeEach(async () => {
+            await act(async () => {
+                render(
+                    <Router initialEntries={paths} initialIndex={5}>
+                        <AppRoutes />
+                    </Router>
+                );
+            });
+        });
+
+        test('then it should display the FavPage', async () => {
+            const element = await screen.findByText(/test fav/i);
+            expect(element).toBeInTheDocument();
+        });
+    });
+
+    describe('when we render the component and the route is Profile', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
@@ -159,13 +159,13 @@ describe('Given AppRoutes component', () => {
             });
         });
 
-        test('then it should display the AlbumsPage', async () => {
-            const element = await screen.findByText(/test favorites/i);
+        test('then it should display the ProfilePage', async () => {
+            const element = await screen.findByText(/test profile/i);
             expect(element).toBeInTheDocument();
         });
     });
 
-    describe('when we render the component and the route is Profile', () => {
+    describe('when we render the component and the route is Details', () => {
         beforeEach(async () => {
             await act(async () => {
                 render(
@@ -176,8 +176,8 @@ describe('Given AppRoutes component', () => {
             });
         });
 
-        test('then it should display the AlbumsPage', async () => {
-            const element = await screen.findByText(/test profile/i);
+        test('then it should display the DetailsPage', async () => {
+            const element = await screen.findByText(/test albums/i);
             expect(element).toBeInTheDocument();
         });
     });

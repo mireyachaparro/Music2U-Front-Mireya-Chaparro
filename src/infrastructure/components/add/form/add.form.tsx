@@ -55,7 +55,6 @@ export function AddForm() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (event: any) => {
         setFormatAlbum(event.target.value);
-        console.log(formatAlbum);
     };
 
     const handleSubmit = async (ev: SyntheticEvent) => {
@@ -72,7 +71,6 @@ export function AddForm() {
         };
 
         handleAdd(newAlbum);
-        console.log('pepe');
         setFormState(initialState);
     };
 
@@ -94,7 +92,7 @@ export function AddForm() {
                     </div>
                     <div className="flex flex-col mb-2 bg-gray-100 border-b border-gray-400 border-solid">
                         <input
-                            className="py-4 text-xl bg-gray-100"
+                            className="py-4 ml-1 text-xl bg-gray-100"
                             type="file"
                             name="image"
                             placeholder="Image"
@@ -146,13 +144,14 @@ export function AddForm() {
                             Format
                         </p>
                         <Select
-                            className="flex self-center h-8 "
+                            className="flex self-center h-8 bg-gray-100"
                             name="format"
                             required
                             value={formatAlbum}
                             onChange={handleChange}
                             autoWidth
-                            label="Format"
+                            placeholder="format"
+                            aria-label="Format"
                         >
                             <MenuItem value={'CD'}>CD</MenuItem>
                             <MenuItem value={'Vinyl'}>Vinyl</MenuItem>
@@ -171,8 +170,11 @@ export function AddForm() {
                         />
                         <span className="self-center text-lg ">€</span>
                     </div>
-                    <div className="flex justify-center w-full mt-10 text-xl text-white bg-black h-14">
-                        <button type="submit" className="form__button">
+                    <div className="flex justify-center mt-10 ">
+                        <button
+                            type="submit"
+                            className="w-full text-xl text-white bg-black h-14"
+                        >
                             ADD
                         </button>
                     </div>

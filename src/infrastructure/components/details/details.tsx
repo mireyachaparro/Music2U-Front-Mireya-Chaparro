@@ -29,10 +29,7 @@ export function AlbumDetails() {
     const { id } = useParams();
 
     const getAlbumById = async (id: string | undefined) => {
-        const album = await fetch(
-            // `https://mireya-chaparro-back-final-project.onrender.com/albums/${id}`
-            `http://localhost:7700/albums/${id}`
-        )
+        const album = await fetch(`http://localhost:7700/albums/${id}`)
             .then((data) => data.json())
             .then((resp) => resp.album);
         setDetails(album);
@@ -135,11 +132,12 @@ export function AlbumDetails() {
                                 </button>
                             </div>
                         ) : (
-                            <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
+                            <div className="flex">
                                 <button
                                     type="submit"
-                                    className="form__button"
+                                    className="flex items-center justify-center text-xl text-black bg-gray-300 form__button w-14 h-14"
                                     name="ADD"
+                                    aria-label="ADD"
                                     onClick={handleAddFavorite}
                                 >
                                     <img

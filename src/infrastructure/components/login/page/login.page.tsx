@@ -9,7 +9,7 @@ function LoginPage() {
                 <div className="flex justify-center p-8">
                     <img
                         className="page__logo"
-                        src="/assets/logo.png"
+                        src="/assets/logoMusic2u.png"
                         alt="logo"
                         width="150px"
                         height="150px"
@@ -18,11 +18,7 @@ function LoginPage() {
                 <div className="flex justify-center">
                     <LoginForm></LoginForm>
                 </div>
-
-                <p className="flex justify-center mb-16 text-base font-medium">
-                    <Link to={'/forgot'}>Forgot your password?</Link>
-                </p>
-                <p className="flex justify-center text-base font-medium page__paragraph">
+                <p className="flex justify-center pt-4 text-base font-medium page__paragraph">
                     Don’t have an account?
                     <span className="text-gray-500">
                         <Link to={'/register'}> Sign up</Link>

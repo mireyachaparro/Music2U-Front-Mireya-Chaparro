@@ -15,7 +15,6 @@ export const useUsers = () => {
         repoUser
             .login(user)
             .then((res) => {
-                console.log(res);
                 dispatcher(ac.loginAction(res));
             })
             .catch((error: Error) => console.log(error.name, error.message));

@@ -34,8 +34,8 @@ export function RegisterForm() {
 
     const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
-        await userRepo.register(formState);
         navigate('/');
+        await userRepo.register(formState);
     };
 
     return (
@@ -102,9 +102,12 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="mb-4 bg-gray-100 border-b border-gray-400 border-solid">
+                    <div className="flex items-end mb-4 bg-gray-100 border-b border-gray-400 border-solid ">
+                        <p className="flex items-baseline mb-2 mr-10 text-xl text-gray-400 bg-gray-10">
+                            Birthday
+                        </p>
                         <input
-                            className="py-2 text-xl bg-gray-100"
+                            className="py-2 text-xl text-gray-500 bg-gray-100"
                             type="date"
                             name="birthday"
                             placeholder="Birthday"
@@ -114,8 +117,14 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
-                        <button type="submit">REGISTER</button>
+                    <div className="flex justify-center mt-6 mb-6 ">
+                        <button
+                            className="text-xl text-white bg-black w-80 h-14"
+                            type="submit"
+                            value="REGISTER"
+                        >
+                            REGISTER
+                        </button>
                     </div>
                 </form>
             </div>

@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
-import { appStore } from '../../../store/store';
+import { mockStore } from '../../../../mock/mocks';
 import { AddForm } from './add.form';
 
 jest.mock('../../../../features/album/hook/use.albums');
@@ -24,7 +24,7 @@ describe('given addForm component', () => {
         (useAlbums as jest.Mock).mockReturnValue({ handleAdd: jest.fn() });
 
         render(
-            <Provider store={appStore}>
+            <Provider store={mockStore}>
                 <Router>
                     <AddForm></AddForm>
                 </Router>
@@ -68,6 +68,8 @@ describe('given addForm component', () => {
                 } as unknown as any);
 
             const button = screen.getAllByRole('button');
+            fireEvent.input(screen.getByLabelText(/Name/i));
+            fireEvent.change(screen.getByLabelText(/Format/i));
             userEvent.click(button[1]);
             expect(collection).toHaveBeenCalled();
         });

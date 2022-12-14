@@ -3,7 +3,6 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 const LoginPage = lazy(() => import('../login/page/login.page'));
 const RegisterPage = lazy(() => import('../register/page/register.page'));
-const ForgotPage = lazy(() => import('../forgot/page/forgot.page'));
 const AddPage = lazy(() => import('../add/page/add.page'));
 const CdPage = lazy(() => import('../cd/page/cd.page'));
 const VinylPage = lazy(() => import('../vinyl/page/vinyl.page'));
@@ -29,10 +28,6 @@ export function AppRoutes() {
                     path="/register"
                     element={<RegisterPage></RegisterPage>}
                 ></Route>
-                <Route
-                    path="/forgot"
-                    element={<ForgotPage></ForgotPage>}
-                ></Route>
                 <Route path="/add" element={<AddPage></AddPage>}></Route>
                 <Route path="/cd" element={<CdPage></CdPage>}></Route>
                 <Route path="/vinyl" element={<VinylPage></VinylPage>}></Route>
@@ -48,7 +43,7 @@ export function AppRoutes() {
                             <div className="flex justify-center">
                                 <Link to="/albums">
                                     <img
-                                        src="/assets/favicon.png"
+                                        src="/assets/logoMusic2u.png"
                                         alt="logo"
                                         width="100px"
                                         height="100px"
