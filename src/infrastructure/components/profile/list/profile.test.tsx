@@ -1,14 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
-import { AlbumModel } from '../../../../features/album/model/album.model';
-import { albumReducer } from '../../../../features/album/reducer/album.reducer';
-import { userReducer } from '../../../../features/user/reducer/user.reducer';
 import { mockStore } from '../../../../mock/mocks';
-import { rootState, rootStore } from '../../../store/store';
 import { ProfileList } from './profile';
 
 jest.mock('../../../../features/album/hook/use.albums');

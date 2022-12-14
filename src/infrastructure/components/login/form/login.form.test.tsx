@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useUsers } from '../../../../features/user/hooks/use.users';
-import { mockStore } from '../../../../mock/mocks';
 import { appStore } from '../../../store/store';
 import { LoginForm } from './login.form';
 

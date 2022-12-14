@@ -5,7 +5,6 @@ import { MemoryRouter as Router } from 'react-router-dom';
 import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
 import { mockStore } from '../../../../mock/mocks';
-import { appStore } from '../../../store/store';
 import { AddForm } from './add.form';
 
 jest.mock('../../../../features/album/hook/use.albums');

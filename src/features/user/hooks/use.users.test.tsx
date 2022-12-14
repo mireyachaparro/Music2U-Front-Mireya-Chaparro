@@ -49,11 +49,11 @@ describe('', () => {
         expect(UserRepository.prototype.login).toHaveBeenCalled();
     });
 
-    test('login error', async () => {
+    test('login error', () => {
         (UserRepository.prototype.login as jest.Mock).mockRejectedValueOnce(
             new Error()
         );
-        await result.current.handleLogin(userMock);
+        result.current.handleLogin(userMock);
         expect(UserRepository.prototype.login).toHaveBeenCalled();
     });
 
@@ -62,11 +62,11 @@ describe('', () => {
         expect(UserRepository.prototype.addFav).toHaveBeenCalled();
     });
 
-    test('add fav error', async () => {
+    test('add fav error', () => {
         (UserRepository.prototype.addFav as jest.Mock).mockRejectedValueOnce(
             new Error()
         );
-        await result.current.handleAddFav({});
+        result.current.handleAddFav({});
         expect(UserRepository.prototype.addFav).toHaveBeenCalled();
     });
 
@@ -75,11 +75,11 @@ describe('', () => {
         expect(UserRepository.prototype.deleteFav).toHaveBeenCalled();
     });
 
-    test('delete fav error', async () => {
+    test('delete fav error', () => {
         (UserRepository.prototype.deleteFav as jest.Mock).mockRejectedValueOnce(
             new Error()
         );
-        await result.current.handleDeleteFav({});
+        result.current.handleDeleteFav({});
         expect(UserRepository.prototype.deleteFav).toHaveBeenCalled();
     });
 });

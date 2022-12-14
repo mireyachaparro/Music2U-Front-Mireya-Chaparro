@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { Album } from '../features/album/model/album.model';
 import { albumReducer } from '../features/album/reducer/album.reducer';
-import { User, UserModel } from '../features/user/model/user.model';
+import { User } from '../features/user/model/user.model';
 import { userReducer } from '../features/user/reducer/user.reducer';
 import { rootState } from '../infrastructure/store/store';
 

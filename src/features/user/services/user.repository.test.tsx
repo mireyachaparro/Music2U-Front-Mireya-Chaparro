@@ -1,5 +1,4 @@
 import { userMock } from '../../../mock/mocks';
-import { AlbumModel } from '../../album/model/album.model';
 import { UserRepository } from './user.repository';
 
 describe('given AlbumRepository', () => {
@@ -8,7 +7,6 @@ describe('given AlbumRepository', () => {
     beforeEach(() => {
         userRepo = new UserRepository();
     });
-    const mockAlbum = new AlbumModel('', '', '', 1, '', '', 1, false);
     describe('reister', () => {
         test('bien', async () => {
             global.fetch = jest.fn().mockResolvedValue({
