@@ -82,6 +82,7 @@ describe('Given favList component', () => {
         beforeEach(() => {
             (useUsers as jest.Mock).mockReturnValue({
                 handleDeleteFav: jest.fn(),
+                users: { user: { isLogged: true, favorites: [{}] } },
             });
             render(
                 <Router>
@@ -92,12 +93,12 @@ describe('Given favList component', () => {
             );
         });
 
-        test.skip('then it should display the title', () => {
+        test('then it should display the title', () => {
             const element = screen.getByText(/€/i);
             expect(element).toBeInTheDocument();
         });
 
-        test.skip('que llame al boton deborrar favorito', () => {
+        test('que llame al boton deborrar favorito', () => {
             const button = screen.getByRole('button', { name: 'deleteFav' });
             userEvent.click(button);
             expect(useUsers().handleDeleteFav).toHaveBeenCalled();

@@ -171,8 +171,11 @@ export function AddForm() {
                         />
                         <span className="self-center text-lg ">€</span>
                     </div>
-                    <div className="flex justify-center w-full mt-10 text-xl text-white bg-black h-14">
-                        <button type="submit" className="form__button">
+                    <div className="flex justify-center mt-10 ">
+                        <button
+                            type="submit"
+                            className="w-full text-xl text-white bg-black h-14"
+                        >
                             ADD
                         </button>
                     </div>

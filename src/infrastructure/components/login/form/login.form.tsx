@@ -59,8 +59,11 @@ export function LoginForm() {
                             required
                         />
                     </div>
-                    <div className="flex justify-center mt-16 mb-8 text-xl text-white bg-black w-80 h-14">
-                        <button type="submit" className="form__button">
+                    <div className="flex justify-center mt-16 mb-8 ">
+                        <button
+                            type="submit"
+                            className="text-xl text-white bg-black w-80 h-14"
+                        >
                             LOGIN
                         </button>
                     </div>

@@ -6,6 +6,7 @@ import { albumReducer } from '../../../../features/album/reducer/album.reducer';
 import { rootState, rootStore } from '../../../store/store';
 import { userReducer } from '../../../../features/user/reducer/user.reducer';
 import { VinylList } from './vinyl.list';
+
 jest.mock('../../../../features/album/hook/use.albums');
 
 describe('Given VinylList component', () => {

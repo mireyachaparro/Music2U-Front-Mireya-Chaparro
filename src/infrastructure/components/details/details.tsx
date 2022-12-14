@@ -135,11 +135,12 @@ export function AlbumDetails() {
                                 </button>
                             </div>
                         ) : (
-                            <div className="flex justify-center text-xl text-black bg-gray-300 w-14 h-14">
+                            <div className="flex">
                                 <button
                                     type="submit"
-                                    className="form__button"
+                                    className="flex items-center justify-center text-xl text-black bg-gray-300 form__button w-14 h-14"
                                     name="ADD"
+                                    aria-label="ADD"
                                     onClick={handleAddFavorite}
                                 >
                                     <img
