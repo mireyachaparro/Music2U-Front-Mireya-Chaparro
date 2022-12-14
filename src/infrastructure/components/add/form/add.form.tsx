@@ -1,4 +1,3 @@
-import React from 'react';
 import { SyntheticEvent, useState } from 'react';
 import { app } from '../../../../fb';
 import { useAlbums } from '../../../../features/album/hook/use.albums';
@@ -38,7 +37,7 @@ export function AddForm() {
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const [fileUrl, setFileUrl] = React.useState('');
+    const [fileUrl, setFileUrl] = useState('');
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleFile = async (ev: any) => {
@@ -50,7 +49,7 @@ export function AddForm() {
         setFileUrl(linkUrl);
     };
 
-    const [formatAlbum, setFormatAlbum] = React.useState('');
+    const [formatAlbum, setFormatAlbum] = useState('');
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleChange = (event: any) => {
