@@ -8,10 +8,10 @@ function RegisterPage() {
                 <h2 className="text-4xl font-bold page__title">
                     Personal Details
                 </h2>
-                <div className="flex justify-center p-8">
+                <div className="flex justify-center p-8 pb-4">
                     <img
                         className="page__logo"
-                        src="/assets/logo.png"
+                        src="/assets/logoMusic2u.png"
                         alt="logo"
                         width="150px"
                         height="150px"

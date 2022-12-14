@@ -114,7 +114,7 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="flex justify-center mt-16 mb-16 text-xl text-white bg-black w-80 h-14">
+                    <div className="flex justify-center mt-6 mb-6 text-xl text-white bg-black w-80 h-14">
                         <button type="submit">REGISTER</button>
                     </div>
                 </form>

@@ -9,7 +9,7 @@ function LoginPage() {
                 <div className="flex justify-center p-8">
                     <img
                         className="page__logo"
-                        src="/assets/logo.png"
+                        src="/assets/logoMusic2u.png"
                         alt="logo"
                         width="150px"
                         height="150px"

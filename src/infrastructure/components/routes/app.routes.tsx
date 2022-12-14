@@ -43,7 +43,7 @@ export function AppRoutes() {
                             <div className="flex justify-center">
                                 <Link to="/albums">
                                     <img
-                                        src="/assets/favicon.png"
+                                        src="/assets/logoMusic2u.png"
                                         alt="logo"
                                         width="100px"
                                         height="100px"
