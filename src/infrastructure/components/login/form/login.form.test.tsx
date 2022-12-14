@@ -3,10 +3,17 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useUsers } from '../../../../features/user/hooks/use.users';
+import { mockStore } from '../../../../mock/mocks';
 import { appStore } from '../../../store/store';
 import { LoginForm } from './login.form';
 
+const mockNavigate = jest.fn();
+
 jest.mock('../../../../features/user/hooks/use.users');
+jest.mock('react-router-dom', () => ({
+    ...(jest.requireActual('react-router-dom') as jest.Mock),
+    useNavigate: () => mockNavigate,
+}));
 
 describe('given LoginForm component', () => {
     let formElements: Array<{ role: string; name: string }>;
@@ -58,6 +65,12 @@ describe('given LoginForm component', () => {
             const button = screen.getByRole('button', { name: 'LOGIN' });
             userEvent.click(button);
             expect(useUsers().handleLogin).toHaveBeenCalled();
+        });
+
+        describe('then the user clicks the button', () => {
+            test('the handleAdd from the custom hook should be called', () => {
+                userEvent.click(screen.getByText(/LOGIN/i));
+            });
         });
     });
 });

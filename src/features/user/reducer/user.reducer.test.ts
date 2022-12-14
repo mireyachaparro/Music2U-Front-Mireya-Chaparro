@@ -42,26 +42,55 @@ describe('given userReducer', () => {
                 user: null,
             };
         });
-        test.skip('then it should return orginal state with isLogging: true', () => {
-            //falla
-            //lo que envia esta bien pero lo que espera no, no se como ponerlo
+        test('then it should return orginal state with isLogging: true', () => {
+            action = {
+                type: actionTypes.startLogin,
+                payload: {
+                    isLogging: true,
+                    isLogged: false,
+                    token: '',
+                    user: null,
+                },
+            };
+            state = {
+                ...state,
+            };
+            const result = userReducer(state, action);
+            expect(result).toEqual(action.payload);
+        });
+
+        test('then it should return orginal state with islogged: true', () => {
+            action = {
+                type: actionTypes.login,
+                payload: {
+                    isLogging: false,
+                    isLogged: true,
+                    token: 'token',
+                    user: userMock,
+                },
+            };
+            state = {
+                ...state,
+            };
+            const result = userReducer(state, action);
+            expect(result).toEqual(action.payload);
+        });
+
+        test('then it should return orginal state with logout: true', () => {
+            action = {
+                type: actionTypes.logout,
+                payload: {
+                    isLogging: false,
+                    isLogged: false,
+                    token: '',
+                    user: null,
+                },
+            };
+            state = {
+                ...state,
+            };
             const result = userReducer(state, action);
             expect(result).toEqual(action.payload);
         });
     });
-
-    // describe('when action is login', () => {
-    //     beforeEach(() => {
-    //         action = {
-    //             type: actionTypes.login,
-    //             payload: {},
-    //         };
-    //         state = {
-    //             isLogging: false,
-    //             isLogged: false,
-    //             token: '',
-    //             user: null,
-    //         };
-    //     });
-    // });
 });

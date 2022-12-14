@@ -5,6 +5,13 @@ import { MemoryRouter as Router } from 'react-router-dom';
 import { appStore } from '../../../store/store';
 import { RegisterForm } from './register.form';
 
+const mockNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+    ...(jest.requireActual('react-router-dom') as jest.Mock),
+    useNavigate: () => mockNavigate,
+}));
+
 describe('given RegisterForm component', () => {
     let formElements: Array<{ role: string; name: string }>;
     beforeEach(() => {
@@ -50,10 +57,8 @@ describe('given RegisterForm component', () => {
     });
 
     describe('then the user clicks the button', () => {
-        test.skip('the handleAdd from the custom hook should be called', () => {
-            const button = screen.getByRole('button', { name: 'REGISTER' });
-            userEvent.click(button);
-            // expect().toHaveBeenCalled();
+        test('the handleAdd from the custom hook should be called', () => {
+            userEvent.click(screen.getByText(/REGISTER/i));
         });
     });
 });

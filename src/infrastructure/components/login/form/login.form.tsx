@@ -33,8 +33,8 @@ export function LoginForm() {
             setErrorLogin(true);
             return;
         }
-        setFormState(initialState);
         navigate('/albums');
+        setFormState(initialState);
     };
 
     return (

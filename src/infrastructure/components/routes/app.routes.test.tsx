@@ -30,6 +30,10 @@ jest.mock('../profile/page/profile.page', () => {
     return () => <div>Test Profile</div>;
 });
 
+jest.mock('../albums/page/albums.page', () => {
+    return () => <div>Test albums</div>;
+});
+
 describe('Given AppRoutes component', () => {
     let paths: Array<string>;
 
@@ -42,6 +46,7 @@ describe('Given AppRoutes component', () => {
             '/vinyl',
             '/favorites',
             '/profile',
+            '/albums',
         ];
     });
 
@@ -156,6 +161,23 @@ describe('Given AppRoutes component', () => {
 
         test('then it should display the ProfilePage', async () => {
             const element = await screen.findByText(/test profile/i);
+            expect(element).toBeInTheDocument();
+        });
+    });
+
+    describe('when we render the component and the route is Details', () => {
+        beforeEach(async () => {
+            await act(async () => {
+                render(
+                    <Router initialEntries={paths} initialIndex={7}>
+                        <AppRoutes />
+                    </Router>
+                );
+            });
+        });
+
+        test('then it should display the DetailsPage', async () => {
+            const element = await screen.findByText(/test albums/i);
             expect(element).toBeInTheDocument();
         });
     });
