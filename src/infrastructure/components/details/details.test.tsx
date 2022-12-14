@@ -9,6 +9,7 @@ import { useUsers } from '../../../features/user/hooks/use.users';
 import { userReducer } from '../../../features/user/reducer/user.reducer';
 import { rootState, rootStore } from '../../store/store';
 import { AlbumDetails } from './details';
+import { mockPass } from '../../../mock/mocks';
 
 jest.mock('../../../features/user/hooks/use.users');
 
@@ -40,7 +41,7 @@ describe('Given AlbumDetails page', () => {
                 name: 'a',
                 last_name: 'a',
                 email: 'a@a',
-                password: 'a',
+                password: mockPass,
                 phone: '1',
                 birthday: '1',
                 favorites: [],
