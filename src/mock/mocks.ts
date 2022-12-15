@@ -6,6 +6,7 @@ import { userReducer } from '../features/user/reducer/user.reducer';
 import { rootState } from '../infrastructure/store/store';
 
 export const mockPass = '';
+
 export const userMock: User = {
     id: '1',
     name: '',
