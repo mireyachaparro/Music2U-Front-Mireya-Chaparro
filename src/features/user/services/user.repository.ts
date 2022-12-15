@@ -8,13 +8,16 @@ export class UserRepository implements Repository<User> {
     }
 
     register(item: Partial<User>): Promise<User> {
-        return fetch('http://localhost:7700/users/register', {
-            method: 'POST',
-            body: JSON.stringify(item),
-            headers: {
-                'content-type': 'application/json',
-            },
-        })
+        return fetch(
+            'https://mireya-chaparro-back-final-project.onrender.com/users/register',
+            {
+                method: 'POST',
+                body: JSON.stringify(item),
+                headers: {
+                    'content-type': 'application/json',
+                },
+            }
+        )
             .then((response) => {
                 if (response.ok) {
                     return response.json();
@@ -27,13 +30,16 @@ export class UserRepository implements Repository<User> {
     }
 
     login(item: Partial<User>): Promise<{ user: User; token: string }> {
-        return fetch('http://localhost:7700/users/login', {
-            method: 'POST',
-            body: JSON.stringify(item),
-            headers: {
-                'content-type': 'application/json',
-            },
-        })
+        return fetch(
+            'https://mireya-chaparro-back-final-project.onrender.com/users/login',
+            {
+                method: 'POST',
+                body: JSON.stringify(item),
+                headers: {
+                    'content-type': 'application/json',
+                },
+            }
+        )
             .then((response) => {
                 if (response.ok) return response.json();
                 throw this.#createError(response);
@@ -48,13 +54,16 @@ export class UserRepository implements Repository<User> {
     }
 
     addFav(id: string): Promise<User> {
-        return fetch(`http://localhost:7700/users/addFav/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-            },
-        })
+        return fetch(
+            `https://mireya-chaparro-back-final-project.onrender.com/users/addFav/${id}`,
+            {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            }
+        )
             .then((res) => {
                 if (res.ok) return res.json();
                 throw this.#createError(res);
@@ -63,13 +72,16 @@ export class UserRepository implements Repository<User> {
     }
 
     deleteFav(id: string): Promise<User> {
-        return fetch(`http://localhost:7700/users/deleteFav/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-            },
-        })
+        return fetch(
+            `https://mireya-chaparro-back-final-project.onrender.com/users/deleteFav/${id}`,
+            {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            }
+        )
             .then((res) => {
                 if (res.ok) return res.json();
                 throw this.#createError(res);

@@ -5,4 +5,5 @@ export const actionTypes = {
     addFav: 'users@addFav',
     deleteFav: 'users@deleteFav',
     updatePossessions: 'users@updatePossessions',
+    deletePossessions: 'users@deletePossessions',
 };

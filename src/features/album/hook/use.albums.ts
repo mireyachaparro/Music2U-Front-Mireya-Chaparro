@@ -4,7 +4,10 @@ import { AlbumRepository } from '../services/album.repository';
 import { rootState } from '../../../infrastructure/store/store';
 import * as ac from '../reducer/album.action.creators';
 import { Album, ProtoAlbum } from '../model/album.model';
-import { updatePossessionsAction } from '../../user/reducer/user.action.creators';
+import {
+    deletePossessionsAction,
+    updatePossessionsAction,
+} from '../../user/reducer/user.action.creators';
 
 export const useAlbums = () => {
     const albums = useSelector((state: rootState) => state.albums);
@@ -45,7 +48,7 @@ export const useAlbums = () => {
             .then(() => {
                 dispatcher(ac.deleteAction(id));
                 //actualizar usuario cuando borra
-                // dispatcher(updatePossessionsAction({album}));
+                dispatcher(deletePossessionsAction(id));
             })
             .catch((error: Error) => console.log(error.name, error.message));
     };
