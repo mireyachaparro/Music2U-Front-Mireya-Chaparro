@@ -52,6 +52,11 @@ describe('Given AlbumDetails page', () => {
             const element = screen.getByAltText(/cover/i);
             expect(element).toBeInTheDocument();
         });
+
+        test('then it should display the word "inicia"', () => {
+            const element = screen.getByText(/inicia/i);
+            expect(element).toBeInTheDocument();
+        });
     });
 
     describe('When the user clicks the button', () => {

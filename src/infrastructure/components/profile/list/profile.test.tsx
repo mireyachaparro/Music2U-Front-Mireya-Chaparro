@@ -9,7 +9,7 @@ import { ProfileList } from './profile';
 jest.mock('../../../../features/album/hook/use.albums');
 
 describe('Given profileList component', () => {
-    describe('when we render the album item', () => {
+    describe('when we render it', () => {
         beforeEach(() => {
             (useAlbums as jest.Mock).mockReturnValue({
                 handleDelete: jest.fn(),
@@ -28,13 +28,13 @@ describe('Given profileList component', () => {
             expect(element).toBeInTheDocument();
         });
 
-        test('que llame al boton de borrar', () => {
+        test('then the button "delete" should call handleDelete function from custom hook', () => {
             const button = screen.getByRole('button', { name: 'delete' });
             userEvent.click(button);
             expect(useAlbums().handleDelete).toHaveBeenCalled();
         });
 
-        test.skip('que llame al boton de log out', () => {
+        test.skip('then the button "log out" should call handleLogOut function', () => {
             userEvent.click(screen.getByText(/Log out/i));
         });
     });

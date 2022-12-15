@@ -46,7 +46,7 @@ describe('given LoginForm component', () => {
     });
 
     describe('when the user types in the inputs', () => {
-        test('then the first text in second input should be in the screen', () => {
+        test('then the first text in first input should be in the screen', () => {
             const mockTyped = 'test';
 
             const input = screen.getByRole(formElements[0].role, {
@@ -67,7 +67,7 @@ describe('given LoginForm component', () => {
         });
 
         describe('then the user clicks the button', () => {
-            test('the handleAdd from the custom hook should be called', () => {
+            test('the hit should be a button with text "LOGIN"', () => {
                 userEvent.click(screen.getByText(/LOGIN/i));
             });
         });

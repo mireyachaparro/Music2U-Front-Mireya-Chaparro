@@ -4,8 +4,8 @@ import { AlbumsCdList } from './cd.list';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { mockStore } from '../../../../../mock/mocks';
 
-describe('', () => {
-    test('', () => {
+describe('Given AlbumsCdList component', () => {
+    test('then it should render AlbumsCdList', () => {
         render(
             <Router>
                 <Provider store={mockStore}>

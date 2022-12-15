@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { Menu } from './menu';
 
-describe('Given Header component', () => {
+describe('Given Menu component', () => {
     describe('When we render the component', () => {
         beforeEach(() => {
             render(

@@ -30,7 +30,7 @@ describe('Given App component', () => {
                 );
             });
         });
-        test('Then it should display the title', () => {
+        test('Then it should display the word "account" in loginPage', () => {
             const element = screen.getByText(/account/i);
             expect(element).toBeInTheDocument();
         });

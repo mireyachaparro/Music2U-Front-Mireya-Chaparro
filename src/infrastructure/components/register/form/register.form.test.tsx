@@ -32,7 +32,7 @@ describe('given RegisterForm component', () => {
     });
 
     describe('when the form is rendered', () => {
-        test('then it should display a form with 6 inputs and a button', () => {
+        test('then it should display a form with 4 inputs and a button', () => {
             formElements.forEach((item) => {
                 const element: HTMLFormElement = screen.getByRole(item.role, {
                     name: item.name,

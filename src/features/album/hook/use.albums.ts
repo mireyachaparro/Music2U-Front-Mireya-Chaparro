@@ -44,6 +44,7 @@ export const useAlbums = () => {
             .delete(id)
             .then(() => {
                 dispatcher(ac.deleteAction(id));
+                //actualizar usuario cuando borra
                 // dispatcher(updatePossessionsAction({album}));
             })
             .catch((error: Error) => console.log(error.name, error.message));

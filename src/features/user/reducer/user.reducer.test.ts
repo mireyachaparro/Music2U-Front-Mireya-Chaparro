@@ -57,39 +57,41 @@ describe('given userReducer', () => {
             const result = userReducer(state, action);
             expect(result).toEqual(action.payload);
         });
-
-        test('then it should return orginal state with islogged: true', () => {
-            action = {
-                type: actionTypes.login,
-                payload: {
-                    isLogging: false,
-                    isLogged: true,
-                    token: 'token',
-                    user: userMock,
-                },
-            };
-            state = {
-                ...state,
-            };
-            const result = userReducer(state, action);
-            expect(result).toEqual(action.payload);
+        describe('when action is islogged', () => {
+            test('then it should return orginal state with islogged: true', () => {
+                action = {
+                    type: actionTypes.login,
+                    payload: {
+                        isLogging: false,
+                        isLogged: true,
+                        token: 'token',
+                        user: userMock,
+                    },
+                };
+                state = {
+                    ...state,
+                };
+                const result = userReducer(state, action);
+                expect(result).toEqual(action.payload);
+            });
         });
-
-        test('then it should return orginal state with logout: true', () => {
-            action = {
-                type: actionTypes.logout,
-                payload: {
-                    isLogging: false,
-                    isLogged: false,
-                    token: '',
-                    user: null,
-                },
-            };
-            state = {
-                ...state,
-            };
-            const result = userReducer(state, action);
-            expect(result).toEqual(action.payload);
+        describe('when action is logout', () => {
+            test('then it should return orginal state with logout: true', () => {
+                action = {
+                    type: actionTypes.logout,
+                    payload: {
+                        isLogging: false,
+                        isLogged: false,
+                        token: '',
+                        user: null,
+                    },
+                };
+                state = {
+                    ...state,
+                };
+                const result = userReducer(state, action);
+                expect(result).toEqual(action.payload);
+            });
         });
     });
 });

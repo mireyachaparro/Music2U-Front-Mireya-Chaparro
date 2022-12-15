@@ -15,7 +15,7 @@ describe('Given Details page', () => {
                 </Provider>
             );
         });
-        test('Then it should display the title', () => {
+        test('Then it should display the propertu format', () => {
             const title = /format/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
