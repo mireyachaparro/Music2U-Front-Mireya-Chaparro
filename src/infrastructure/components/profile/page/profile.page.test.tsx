@@ -16,7 +16,7 @@ describe('Given Profile page', () => {
             );
         });
 
-        test('Then it should display the title', () => {
+        test('Then it should display the paragraph "Log out"', () => {
             const element = screen.getByText(/log out/i);
             expect(element).toBeInTheDocument();
         });

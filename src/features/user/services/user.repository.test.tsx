@@ -1,13 +1,13 @@
 import { userMock } from '../../../mock/mocks';
 import { UserRepository } from './user.repository';
 
-describe('given AlbumRepository', () => {
+describe('given userRepository', () => {
     let userRepo: UserRepository;
     const error = new Error('Error');
     beforeEach(() => {
         userRepo = new UserRepository();
     });
-    describe('reister', () => {
+    describe('when we use albumRepo.register()', () => {
         test('bien', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
@@ -18,7 +18,7 @@ describe('given AlbumRepository', () => {
             expect(result).toBe(userMock);
         });
 
-        test('mal', async () => {
+        test('then if there is any problem, it should throw an error', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: false,
                 status: 404,
@@ -31,8 +31,8 @@ describe('given AlbumRepository', () => {
         });
     });
 
-    describe('login', () => {
-        test('bien', async () => {
+    describe('when we use albumRepo.login()', () => {
+        test('then it should return the user and token', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
                 json: jest.fn().mockResolvedValue(userMock),
@@ -42,7 +42,7 @@ describe('given AlbumRepository', () => {
             expect(result).toBe(userMock);
         });
 
-        test('mal', async () => {
+        test('then if res is not true', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: false,
                 status: 404,
@@ -55,8 +55,8 @@ describe('given AlbumRepository', () => {
         });
     });
 
-    describe('addfav', () => {
-        test('bien', async () => {
+    describe('when we use albumRepo.addFav()', () => {
+        test('then it should return the user with a new fav', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
                 json: jest.fn().mockResolvedValue(userMock),
@@ -66,7 +66,7 @@ describe('given AlbumRepository', () => {
             expect(result).toBe(userMock);
         });
 
-        test('mal', async () => {
+        test('then if there is any error, it throws an error', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: false,
                 status: 404,
@@ -79,8 +79,8 @@ describe('given AlbumRepository', () => {
         });
     });
 
-    describe('delete fav', () => {
-        test('bien', async () => {
+    describe('when we use albumRepo.delete()v', () => {
+        test('then it should return the user without this album', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
                 json: jest.fn().mockResolvedValue(userMock),
@@ -90,7 +90,7 @@ describe('given AlbumRepository', () => {
             expect(result).toBe(userMock);
         });
 
-        test('mal', async () => {
+        test('then if there is any problem, it should throw an error', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: false,
                 status: 404,

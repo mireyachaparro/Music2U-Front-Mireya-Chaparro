@@ -10,7 +10,7 @@ jest.mock('../../../../features/album/hook/use.albums');
 jest.mock('../../../../features/user/hooks/use.users');
 
 describe('Given favList component', () => {
-    describe('when we render the CD item', () => {
+    describe('when we render the album item', () => {
         beforeEach(() => {
             (useUsers as jest.Mock).mockReturnValue({
                 handleDeleteFav: jest.fn(),
@@ -25,12 +25,12 @@ describe('Given favList component', () => {
             );
         });
 
-        test('then it should display the title', () => {
+        test('then it should display the euro symbol', () => {
             const element = screen.getByText(/€/i);
             expect(element).toBeInTheDocument();
         });
 
-        test('que llame al boton deborrar favorito', () => {
+        test('then the button should call "deleteFav" function', () => {
             const button = screen.getByRole('button', { name: 'deleteFav' });
             userEvent.click(button);
             expect(useUsers().handleDeleteFav).toHaveBeenCalled();

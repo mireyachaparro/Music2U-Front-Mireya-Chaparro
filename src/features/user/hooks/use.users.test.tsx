@@ -41,7 +41,7 @@ describe('', () => {
 
         ({ result } = renderHook(() => useUsers(), { wrapper }));
     });
-    test('login', () => {
+    test('then if the hook call handleLogin, it call the repository for the initial data and dispatch an action for load the data in the state', () => {
         result.current.handleLogin({
             email: userMock.email,
             password: userMock.password,
@@ -57,7 +57,7 @@ describe('', () => {
         expect(UserRepository.prototype.login).toHaveBeenCalled();
     });
 
-    test('add fav', () => {
+    test('then if the hook call handleAddFav, it call the repository for the initial data and dispatch an action for load the data in the state', () => {
         result.current.handleAddFav({});
         expect(UserRepository.prototype.addFav).toHaveBeenCalled();
     });
@@ -70,7 +70,7 @@ describe('', () => {
         expect(UserRepository.prototype.addFav).toHaveBeenCalled();
     });
 
-    test('delete fav', () => {
+    test('then if the hook call handleDeleteFav, it call the repository for the initial data and dispatch an action for load the data in the state', () => {
         result.current.handleDeleteFav({});
         expect(UserRepository.prototype.deleteFav).toHaveBeenCalled();
     });

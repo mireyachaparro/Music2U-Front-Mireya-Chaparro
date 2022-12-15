@@ -7,10 +7,6 @@ export const appStore = configureStore({
         albums: albumReducer,
         users: userReducer,
     },
-    // preloadedState: {
-    //     albums: [],
-    //     users: { isLogged: false, isLogging: false, token: '', user: null },
-    // },
 });
 
 export type rootStore = typeof appStore;
