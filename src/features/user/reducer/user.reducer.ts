@@ -47,5 +47,16 @@ export const userReducer = createReducer(initialState, (builder) => {
         } as User,
     }));
 
+    builder.addCase(ac.deletePossessionsAction, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: {
+            ...state.user,
+            possessions: (state.user as User).possessions.filter(
+                (item) => item.id !== action.payload
+            ),
+        } as User,
+    }));
+
     builder.addDefaultCase((state) => state);
 });

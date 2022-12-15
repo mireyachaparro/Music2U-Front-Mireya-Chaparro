@@ -15,4 +15,7 @@ export const addFavAction = createAction<User>(actionTypes.addFav);
 export const updatePossessionsAction = createAction<ProtoAlbum>(
     actionTypes.updatePossessions
 );
+export const deletePossessionsAction = createAction<string>(
+    actionTypes.deletePossessions
+);
 export const deleteFavAction = createAction<User>(actionTypes.deleteFav);
